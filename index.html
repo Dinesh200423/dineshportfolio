@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dinesh Kumar — Software Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo" style="color:#0ea5e9;">DK<span class="accent-dot"></span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#works">Works</a></li>
+      <li><a href="#services">Services</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Let's talk</a>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-grid-lines"></div>
+    <div class="hero-photo-glow"></div>
+
+    <!-- LEFT: text content -->
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="avail-dot"></span>
+        Available for new opportunities
+      </div>
+
+      <h1 class="hero-h1">
+        <span class="hero-line1">DINESH</span>
+        <span class="hero-line2">KUMAR</span>
+      </h1>
+
+      <p class="hero-sub">
+        Software Developer crafting <span class="highlight">modern web experiences</span>,
+        Flutter apps &amp; scalable digital solutions that drive real results.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#works" class="btn-primary">View My Work <span class="btn-arrow">↗</span></a>
+        <a href="#contact" class="btn-outline">Get in Touch</a>
+      </div>
+    </div>
+
+    <!-- RIGHT: your photo — change src to your image path -->
+    <div class="hero-photo">
+      <img src="images/dineshimage.jpeg" alt="Dinesh Kumar" />
+    </div>
+
+    <!-- STATS bottom right -->
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-number" id="counter1">20+</div>
+        <div class="stat-label">Projects</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number" id="counter2">15+</div>
+        <div class="stat-label">Clients</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">2</div>
+        <div class="stat-label">Years Exp</div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+      Scroll to explore
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <div class="about-img-frame">
+          <!-- change src to your image path -->
+          <img src="images/dineshimage.jpeg" alt="Dinesh Kumar" />
+        </div>
+        <div class="about-floating-badge">App<br />Developer</div>
+        <div class="about-deco-ring"></div>
+      </div>
+      <div class="about-text">
+        <span class="section-tag reveal">About Me</span>
+        <h2 class="section-title reveal delay-1">Developer<br />+ Growth</h2>
+        <p class="about-para reveal delay-2">I'm Dinesh Kumar — a web developer, Flutter app developer, and freelancer specialising in modern websites, mobile applications, and scalable digital systems.</p>
+        <p class="about-para reveal delay-2">I don't just build products — I build systems that help your business get discovered, convert visitors into customers, and scale efficiently.</p>
+        <div class="skills-grid reveal delay-3">
+          <span class="skill-tag">Flutter</span>
+          <span class="skill-tag">Dart</span>
+          <span class="skill-tag">Firebase</span>
+          <span class="skill-tag">AWS</span>
+          <span class="skill-tag">HTML / CSS / JS</span>
+          <span class="skill-tag">WordPress</span>
+          <span class="skill-tag">Android studio</span>
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">node js</span>
+          <!-- <span class="skill-tag"></span> -->
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKS -->
+  <section id="works">
+    <div class="works-header">
+      <span class="section-tag reveal">My Works</span>
+      <h2 class="section-title reveal delay-1">Selected<br />Projects</h2>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="E-commerce" />
+          <div class="project-overlay"></div>
+        </div>
+        <div class="project-info">
+          <div class="project-cat">Web Development</div>
+          <div class="project-name">E-commerce Platform</div>
+          <div class="project-desc">Modern storefront with intuitive navigation and seamless checkout experience.</div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img">
+          <img src="https://cdn.dribbble.com/userupload/23492690/file/original-6d1b4ac942f354f64995f429d568c500.jpg?format=webp&resize=640x480&vertical=center" alt="Static Website" />
+          <div class="project-overlay"></div>
+        </div>
+        <div class="project-info">
+          <div class="project-cat">Web Design</div>
+          <div class="project-name">Static Webpages</div>
+          <div class="project-desc">Clean, minimal websites for creative professionals and personal brands.</div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img">
+          <img src="https://cdn.dribbble.com/userupload/42930832/file/original-a28a10024dbd3a3d804a4d4dcf9f66f6.png?format=webp&resize=640x480&vertical=center" alt="Restaurant App" />
+          <div class="project-overlay"></div>
+        </div>
+        <div class="project-info">
+          <div class="project-cat">App Design</div>
+          <div class="project-name">Restaurant App</div>
+          <div class="project-desc">Elegant dining experience with an online reservation system integration.</div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop" alt="Fitness App" />
+          <div class="project-overlay"></div>
+        </div>
+        <div class="project-info">
+          <div class="project-cat">Flutter</div>
+          <div class="project-name">Fitness Tracker App</div>
+          <div class="project-desc">Workout plans and progress monitoring with cross-platform Flutter support.</div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop" alt="SR Creations" />
+          <div class="project-overlay"></div>
+        </div>
+        <div class="project-info">
+          <div class="project-cat">Web Design</div>
+          <div class="project-name">SR Creations Portfolio</div>
+          <div class="project-desc">Dark-themed photography portfolio with custom gallery and pricing sections.</div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img">
+          <img src="https://cdn.dribbble.com/userupload/14699537/file/original-9cc6175a29752ca936949417d5f3e9c3.png?format=webp&resize=640x480&vertical=center" alt="Quiz App" />
+          <div class="project-overlay"></div>
+        </div>
+        <div class="project-info">
+          <div class="project-cat">Flutter / Dart</div>
+          <div class="project-name">Interactive Quiz App</div>
+          <div class="project-desc">Quiz application built with Flutter and Dart featuring engaging UI animations.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <span class="section-tag reveal">What I Offer</span>
+    <h2 class="section-title reveal delay-1">Services Built<br />to Grow You</h2>
+    <div class="services-grid">
+
+      <div class="service-card reveal delay-1">
+        <div class="service-icon">🎨</div>
+        <h3 class="service-title">Static Websites</h3>
+        <p class="service-desc">Modern static sites, WordPress and no-code solutions. Fast loading, mobile-first, SEO-ready — built for long-term stability.</p>
+        <div class="service-tags">
+          <span class="stag">Portfolios</span>
+          <span class="stag">Landing Pages</span>
+          <span class="stag">Business Cards</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal delay-2">
+        <div class="service-icon">💻</div>
+        <h3 class="service-title">Dynamic Websites</h3>
+        <p class="service-desc">Feature-rich apps with databases, auth, admin panels, and real-time functionality using modern frameworks.</p>
+        <div class="service-tags">
+          <span class="stag">E-commerce</span>
+          <span class="stag">Booking Systems</span>
+          <span class="stag">Web Apps</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal delay-1">
+        <div class="service-icon">📱</div>
+        <h3 class="service-title">Flutter App Development</h3>
+        <p class="service-desc">Cross-platform mobile apps with Dart, modern UI/UX, and Firebase integration for both iOS and Android.</p>
+        <div class="service-tags">
+          <span class="stag">iOS &amp; Android</span>
+          <span class="stag">Firebase</span>
+          <span class="stag">Real-time</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal delay-2">
+        <div class="service-icon">🚀</div>
+        <h3 class="service-title">CRM & Software Development</h3>
+        <p class="service-desc">Custom software solutions including CRM systems, admin dashboards, and business management tools built with modern tech stacks.</p>
+        <div class="service-tags">
+          <span class="stag">Admin Panels</span>
+          <span class="stag">Custom Dashboards</span>
+          <span class="stag">REST API</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-orb"></div>
+    <span class="section-tag reveal">Contact</span>
+    <h2 class="section-title reveal delay-1">Let's Build<br />Something Great</h2>
+    <p class="contact-sub reveal delay-2">Have a project in mind? I'm open to freelance work, collaborations, and full-time opportunities.</p>
+    <!-- ⚠️ Replace with your real email -->
+    <a href="mailto:your@email.com" class="contact-email reveal delay-2">dkadmin23@gmail.com</a>
+    <div class="social-links reveal delay-3">
+      <!-- ⚠️ Replace with your real links -->
+      <a href="https://www.linkedin.com/in/dinesh-kumar-developer23/" class="social-link" target="_blank" rel="noopener">in</a>
+      <a href="https://github.com/Dinesh200423/"     class="social-link" target="_blank" rel="noopener">git</a>
+      <!-- <a href="https://fiverr.com/yourusername"     class="social-link" target="_blank" rel="noopener">f5</a> -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2025 Dinesh Kumar. All rights reserved.</span>
+    <span>Built with precision ✦ Chennai, India</span>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
