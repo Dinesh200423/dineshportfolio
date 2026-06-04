@@ -16,100 +16,395 @@
 
   <!-- NAV -->
   <nav id="navbar">
-    <a href="#hero" class="nav-logo" style="color:#0ea5e9;">DK<span class="accent-dot"></span></a>
+    <a href="#hero" class="nav-logo" style="display:flex;align-items:center;">
+      <span style="color:#6366f1;font-weight:800;font-size:1.8rem;line-height:1;">DX</span>
+      <span style="color:#fff;margin-left:8px;font-weight:500;font-size:1.1rem;">Dinesh Kumar</span>
+    </a>
     <ul class="nav-links">
+      <li><a href="#hero" class="active">Home</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#works">Works</a></li>
-      <li><a href="#services">Services</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#works">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="#contact" class="nav-cta">Let's talk</a>
+    <a href="dineshkumar-cv.pdf" class="nav-cta-download" target="_blank">Download CV <span class="download-icon">↓</span></a>
   </nav>
 
-  <!-- HERO -->
-  <section id="hero">
-    <div class="hero-grid-lines"></div>
-    <div class="hero-photo-glow"></div>
+  <!-- HERO (ANTI-GRAVITY) -->
+  <section id="hero" class="anti-gravity-hero">
+    <!-- Particles & Background Elements -->
+    <div class="particle p1"></div>
+    <div class="particle p2"></div>
+    <div class="particle p3"></div>
+    <div class="particle p4"></div>
+    <div class="star-bg"></div>
 
     <!-- LEFT: text content -->
-    <div class="hero-content">
+    <div class="hero-left">
       <div class="hero-badge">
-        <span class="avail-dot"></span>
-        Available for new opportunities
+        <span class="avail-dot"></span> Available for opportunities
       </div>
-
-      <h1 class="hero-h1">
-        <span class="hero-line1">DINESH</span>
-        <span class="hero-line2">KUMAR</span>
+      <div class="hero-greeting">HI, I'M DINESH KUMAR</div>
+      <h1 class="hero-title">
+        <span class="gradient-text">Flutter</span> <span style="color: rgba(255,255,255,0.2); font-weight: 300;">|</span><br/>
+        <span class="gradient-text">Web Developer</span>
       </h1>
+      
+      <div class="hero-subtitle">
+        <span style="color: rgba(255,255,255,0.2);">|</span> AWS Enthusiast <span style="color: rgba(255,255,255,0.2);">|</span>
+      </div>
 
-      <p class="hero-sub">
-        Software Developer crafting <span class="highlight">modern web experiences</span>,
-        Flutter apps &amp; scalable digital solutions that drive real results.
+      <p class="hero-desc">
+        I build exceptional and accessible digital experiences<br/>for the web.
       </p>
-
+      
       <div class="hero-actions">
-        <a href="#works" class="btn-primary">View My Work <span class="btn-arrow">↗</span></a>
-        <a href="#contact" class="btn-outline">Get in Touch</a>
+        <a href="#works" class="btn-neo">View My Work <span class="arrow">→</span></a>
+        <a href="#contact" class="btn-neo-outline">Get In Touch <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></a>
+      </div>
+
+      <div class="hero-social">
+        <span class="social-text">Connect with me</span>
+        <a href="https://github.com/Dinesh200423/" class="social-icon" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/dinesh-kumar-developer23/" class="social-icon" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="#" class="social-icon" target="_blank" rel="noopener" aria-label="Twitter">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+        </a>
+        <a href="mailto:dkadmin23@gmail.com" class="social-icon" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.89l5.624-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
+        </a>
       </div>
     </div>
 
-    <!-- RIGHT: your photo — change src to your image path -->
-    <div class="hero-photo">
-      <img src="images/dineshimage.jpeg" alt="Dinesh Kumar" />
-    </div>
+    <!-- RIGHT: Tech Orbit System -->
+    <div class="hero-right">
+      
+      <!-- Center energy field & portrait -->
+      <div class="orbit-center">
+        <div class="energy-field"></div>
+        <img src="images/dineshimage.jpeg" alt="Dinesh Kumar" class="center-portrait" />
+      </div>
 
-    <!-- STATS bottom right -->
-    <div class="hero-stats">
-      <div class="stat">
-        <div class="stat-number" id="counter1">20+</div>
-        <div class="stat-label">Projects</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number" id="counter2">15+</div>
-        <div class="stat-label">Clients</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">2</div>
-        <div class="stat-label">Years Exp</div>
-      </div>
-    </div>
+      <!-- Single main orbit ring -->
+      <div class="tech-orbit-ring">
+        
+        <!-- 9 Technology Cards positioned via CSS vars -->
+        <div class="orbit-item" style="--angle: -90deg;">
+          <div class="connection-point"></div>
+          <div class="tech-container">
+            <div class="tech-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" />
+              <span>Flutter</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="orbit-item" style="--angle: -50deg;">
+          <div class="connection-point"></div>
+          <div class="tech-container">
+            <div class="tech-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart" />
+              <span>Dart</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="orbit-item" style="--angle: -10deg;">
+          <div class="connection-point"></div>
+          <div class="tech-container">
+            <div class="tech-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
+              <span>HTML</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="orbit-item" style="--angle: 30deg;">
+          <div class="connection-point"></div>
+          <div class="tech-container">
+            <div class="tech-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
+              <span>CSS</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="orbit-item" style="--angle: 70deg;">
+          <div class="connection-point"></div>
+          <div class="tech-container">
+            <div class="tech-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+              <span>JS</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="orbit-item" style="--angle: 110deg;">
+          <div class="connection-point"></div>
+          <div class="tech-container">
+            <div class="tech-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" alt="WordPress" style="filter: brightness(0) invert(1);" />
+              <span>WP</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="orbit-item" style="--angle: 150deg;">
+          <div class="connection-point"></div>
+          <div class="tech-container">
+            <div class="tech-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" style="filter: brightness(0) invert(1);" />
+              <span>AWS</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="orbit-item" style="--angle: 190deg;">
+          <div class="connection-point"></div>
+          <div class="tech-container">
+            <div class="tech-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" />
+              <span>Firebase</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="orbit-item" style="--angle: 230deg;">
+          <div class="connection-point"></div>
+          <div class="tech-container">
+            <div class="tech-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
+              <span>MongoDB</span>
+            </div>
+          </div>
+        </div>
 
-    <div class="hero-scroll-hint">
-      <div class="scroll-line"></div>
-      Scroll to explore
+      </div>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section id="about">
-    <div class="about-grid">
-      <div class="about-img-wrap reveal">
-        <div class="about-img-frame">
-          <!-- change src to your image path -->
-          <img src="images/dineshimage.jpeg" alt="Dinesh Kumar" />
+  <section id="about" class="clean-about">
+    <div class="about-container">
+      <!-- LEFT -->
+      <div class="about-left reveal">
+        <div class="section-tag"><span class="purple-dot"></span> ABOUT ME</div>
+        <h2 class="about-title">
+          Passionate about<br/>building things for <span class="purple-text">the web.</span>
+        </h2>
+        <p class="about-desc">
+          I'm a Full Stack Developer with a strong focus on building<br/>(and occasionally designing) exceptional digital<br/>experiences. I enjoy turning complex problems into<br/>simple, beautiful and intuitive solutions.
+        </p>
+        <p class="about-desc">
+          I love writing clean, maintainable code and constantly<br/>learning new technologies to stay up to date.
+        </p>
+
+        <div class="about-info-grid">
+          <div class="info-item">
+            <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            <span class="info-label">Name:</span>
+            <span class="info-val">Dinesh Kumar</span>
+          </div>
+          <div class="info-item">
+            <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span class="info-label">Email:</span>
+            <span class="info-val">dineshkumar23@email.com</span>
+          </div>
+          <div class="info-item">
+            <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span class="info-label">Location:</span>
+            <span class="info-val">India</span>
+          </div>
+          <div class="info-item">
+            <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            <span class="info-label">Experience:</span>
+            <span class="info-val">2+ Years</span>
+          </div>
         </div>
-        <div class="about-floating-badge">App<br />Developer</div>
-        <div class="about-deco-ring"></div>
+        
+        <a href="dineshkumar-cv.pdf" class="btn-neo about-btn" target="_blank">Download CV <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
       </div>
-      <div class="about-text">
-        <span class="section-tag reveal">About Me</span>
-        <h2 class="section-title reveal delay-1">Developer<br />+ Growth</h2>
-        <p class="about-para reveal delay-2">I'm Dinesh Kumar — a web developer, Flutter app developer, and freelancer specialising in modern websites, mobile applications, and scalable digital systems.</p>
-        <p class="about-para reveal delay-2">I don't just build products — I build systems that help your business get discovered, convert visitors into customers, and scale efficiently.</p>
-        <div class="skills-grid reveal delay-3">
-          <span class="skill-tag">Flutter</span>
-          <span class="skill-tag">Dart</span>
-          <span class="skill-tag">Firebase</span>
-          <span class="skill-tag">AWS</span>
-          <span class="skill-tag">HTML / CSS / JS</span>
-          <span class="skill-tag">WordPress</span>
-          <span class="skill-tag">Android studio</span>
-          <span class="skill-tag">Git</span>
-          <span class="skill-tag">node js</span>
-          <!-- <span class="skill-tag"></span> -->
-          
+
+      <!-- RIGHT: Portrait Card -->
+      <div class="about-right reveal">
+        <div class="about-card-wrapper">
+          <!-- Main Developer Image -->
+          <div class="about-img-box">
+            <img src="images/dinesh-portrait-new.jpg" alt="Dinesh Kumar" />
+          </div>
+
+          <!-- Quote Block -->
+          <div class="about-quote-box">
+            <div class="quote-icon-wrap">
+              <span class="quote-icon">“</span>
+            </div>
+            <div class="quote-text-wrap">
+              <p>Code is like humor. When you have to<br/>explain it, it’s bad.</p>
+              <span class="quote-author">– Cory House</span>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- SKILLS (Anti-Gravity Orbit) -->
+  <section id="skills" class="skills-orbit-section">
+    <div class="skills-header reveal">
+      <div class="section-tag"><span class="purple-dot"></span> MY SKILLS</div>
+      <h2 class="section-title">
+        Technologies <span class="purple-text">I work with</span>
+      </h2>
+      <p class="skills-subtitle">
+        Here are the technologies, tools, and platforms I use to build<br/>modern, scalable, and high-performance applications.
+      </p>
+    </div>
+
+    <div class="orbit-universe reveal">
+      <!-- Center glowing sphere -->
+      <div class="center-core">
+        <div class="core-glow"></div>
+        <svg class="core-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"></path></svg>
+      </div>
+
+      <!-- Ring 1 (Frontend - 5 items) -->
+      <div class="orbit-ring ring-1">
+        <div class="orbit-node" style="--orbit-angle: 0deg;">
+          <div class="counter-rotate">
+            <div class="skill-card-glass">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" />
+              <span>Flutter</span>
+            </div>
+          </div>
+        </div>
+        <div class="orbit-node" style="--orbit-angle: 72deg;">
+          <div class="counter-rotate">
+            <div class="skill-card-glass">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart" />
+              <span>Dart</span>
+            </div>
+          </div>
+        </div>
+        <div class="orbit-node" style="--orbit-angle: 144deg;">
+          <div class="counter-rotate">
+            <div class="skill-card-glass">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
+              <span>HTML</span>
+            </div>
+          </div>
+        </div>
+        <div class="orbit-node" style="--orbit-angle: 216deg;">
+          <div class="counter-rotate">
+            <div class="skill-card-glass">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
+              <span>CSS</span>
+            </div>
+          </div>
+        </div>
+        <div class="orbit-node" style="--orbit-angle: 288deg;">
+          <div class="counter-rotate">
+            <div class="skill-card-glass">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+              <span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ring 2 (Backend - 4 items) -->
+      <div class="orbit-ring ring-2">
+        <div class="orbit-node" style="--orbit-angle: 45deg;">
+          <div class="counter-rotate">
+            <div class="skill-card-glass">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" alt="WordPress" />
+              <span>WordPress</span>
+            </div>
+          </div>
+        </div>
+        <div class="orbit-node" style="--orbit-angle: 135deg;">
+          <div class="counter-rotate">
+            <div class="skill-card-glass">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" />
+              <span>Firebase</span>
+            </div>
+          </div>
+        </div>
+        <div class="orbit-node" style="--orbit-angle: 225deg;">
+          <div class="counter-rotate">
+            <div class="skill-card-glass">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/original/amazonwebservices-original-wordmark.svg" style="filter: brightness(0) invert(1);" alt="AWS" />
+              <span>AWS</span>
+            </div>
+          </div>
+        </div>
+        <div class="orbit-node" style="--orbit-angle: 315deg;">
+          <div class="counter-rotate">
+            <div class="skill-card-glass">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
+              <span>MongoDB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ring 3 (Tools - 5 items) -->
+      <div class="orbit-ring ring-3">
+        <div class="orbit-node" style="--orbit-angle: 36deg;">
+          <div class="counter-rotate">
+            <div class="skill-card-glass">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+              <span>Git</span>
+            </div>
+          </div>
+        </div>
+        <div class="orbit-node" style="--orbit-angle: 108deg;">
+          <div class="counter-rotate">
+            <div class="skill-card-glass">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" style="filter: invert(1);" alt="GitHub" />
+              <span>GitHub</span>
+            </div>
+          </div>
+        </div>
+        <div class="orbit-node" style="--orbit-angle: 180deg;">
+          <div class="counter-rotate">
+            <div class="skill-card-glass">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" style="filter: invert(1);" alt="Vercel" />
+              <span>Vercel</span>
+            </div>
+          </div>
+        </div>
+        <div class="orbit-node" style="--orbit-angle: 252deg;">
+          <div class="counter-rotate">
+            <div class="skill-card-glass">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" />
+              <span>VS Code</span>
+            </div>
+          </div>
+        </div>
+        <div class="orbit-node" style="--orbit-angle: 324deg;">
+          <div class="counter-rotate">
+            <div class="skill-card-glass">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" alt="Android Studio" />
+              <span>Android Studio</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="skills-footer-banner reveal">
+      <div class="banner-icon-bg">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+      </div>
+      <div class="banner-text">
+        <h3>Always learning. Always building.</h3>
+        <p>I enjoy exploring new technologies and continuously improving my skills to build better digital experiences.</p>
+      </div>
+      <a href="#contact" class="btn-neo">Let's Build Something <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="19" x2="19" y2="5"></line><polyline points="10 5 19 5 19 14"></polyline></svg></a>
     </div>
   </section>
 
