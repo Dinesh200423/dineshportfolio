@@ -100,3 +100,18 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
+
+/* ── CONTACT GLOW FOLLOWER ── */
+(function () {
+  const contactSection = document.getElementById('contact');
+  const contactGlow = document.getElementById('contactGlow');
+  if (!contactSection || !contactGlow) return;
+  
+  contactSection.addEventListener('mousemove', (e) => {
+    const rect = contactSection.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    contactGlow.style.left = x + 'px';
+    contactGlow.style.top = y + 'px';
+  });
+})();
