@@ -1,0 +1,248 @@
+/* ============================================================
+   DINESH KUMAR — PORTFOLIO
+   Luxury Dark Theme — Black / Crimson
+   ============================================================ */
+
+:root {
+  --black: #050505;
+  --black-soft: #0a0a0a;
+  --black-elevated: #0d0d0d;
+
+  --dark-red: #8b0000;
+  --crimson: #e50914;
+  --crimson-soft: #ff2b3d;
+
+  --white: #ffffff;
+  --gray-100: #e5e5e5;
+  --gray-300: #b3b3b3;
+  --gray-500: #8a8a8a;
+  --gray-700: #555555;
+
+  --glass-bg: rgba(255, 255, 255, 0.035);
+  --glass-bg-strong: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-hover: rgba(229, 9, 20, 0.45);
+
+  --red-glow: 0 0 40px rgba(229, 9, 20, 0.25);
+  --red-glow-strong: 0 0 70px rgba(229, 9, 20, 0.4);
+  --shadow-soft: 0 20px 50px rgba(0, 0, 0, 0.55);
+  --shadow-deep: 0 30px 80px rgba(0, 0, 0, 0.7);
+
+  --radius-sm: 14px;
+  --radius-md: 22px;
+  --radius-lg: 32px;
+  --radius-pill: 999px;
+
+  --font-display: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-body: "DM Sans", "Segoe UI", sans-serif;
+
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+  --container-w: 1360px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--black);
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--crimson);
+  color: var(--white);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--crimson), var(--dark-red));
+  border-radius: 3px;
+}
+
+/* ============ Layout Utilities ============ */
+.container {
+  width: 100%;
+  max-width: var(--container-w);
+  margin: 0 auto;
+  padding-inline: clamp(24px, 5vw, 80px);
+}
+
+.section {
+  position: relative;
+  padding: clamp(5rem, 10vw, 9rem) 0;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--crimson-soft);
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+.section-tag::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--crimson);
+  box-shadow: 0 0 12px var(--crimson);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4.4vw, 3.6rem);
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  color: var(--white);
+}
+
+.section-sub {
+  color: var(--gray-300);
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  line-height: 1.75;
+  max-width: 640px;
+  margin-top: 1.25rem;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--crimson-soft) 0%, var(--dark-red) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ============ Glass surfaces ============ */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  transition: border-color 0.45s var(--ease-premium), box-shadow 0.45s var(--ease-premium),
+    transform 0.45s var(--ease-premium), background 0.45s var(--ease-premium);
+}
+.glass:hover {
+  border-color: var(--glass-border-hover);
+  box-shadow: var(--shadow-deep), var(--red-glow);
+}
+
+/* ============ Buttons ============ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 1.05rem 2.35rem;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.35s var(--ease-premium), box-shadow 0.35s var(--ease-premium),
+    background 0.35s var(--ease-premium), border-color 0.35s var(--ease-premium), color 0.35s;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--crimson) 0%, var(--dark-red) 100%);
+  color: var(--white);
+  box-shadow: 0 10px 30px rgba(229, 9, 20, 0.35);
+}
+.btn-primary:hover {
+  box-shadow: 0 16px 45px rgba(229, 9, 20, 0.55);
+}
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--white);
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+}
+.btn-secondary:hover {
+  border-color: var(--crimson-soft);
+  background: rgba(229, 9, 20, 0.08);
+  box-shadow: var(--red-glow);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--crimson-soft);
+  border: 1.5px solid rgba(229, 9, 20, 0.4);
+}
+.btn-outline:hover {
+  background: rgba(229, 9, 20, 0.1);
+  border-color: var(--crimson);
+}
+
+/* ============ Tags ============ */
+.tag {
+  padding: 6px 16px;
+  background: rgba(229, 9, 20, 0.08);
+  color: #ff8a90;
+  border: 1px solid rgba(229, 9, 20, 0.25);
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* ============ Ambient red glow backdrop (reused per-section) ============ */
+.ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+}
