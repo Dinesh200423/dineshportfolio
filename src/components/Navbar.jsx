@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { FiSun, FiMoon } from "react-icons/fi";
 import { navLinks, profile } from "../data/content";
+import { useTheme } from "../hooks/useTheme";
 import "./Navbar.css";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("#hero");
+  const { theme, toggle } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -63,19 +66,31 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <a href="#contact" className="hire-btn" onClick={handleNav("#contact")}>
-          Hire Me
-        </a>
+        <div className="navbar-actions">
+          <motion.button
+            className="theme-toggle"
+            onClick={toggle}
+            aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            {theme === "dark" ? <FiSun /> : <FiMoon />}
+          </motion.button>
 
-        <button
-          className={`burger ${open ? "open" : ""}`}
-          aria-label="Toggle menu"
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span />
-          <span />
-          <span />
-        </button>
+          <a href="#contact" className="hire-btn" onClick={handleNav("#contact")}>
+            Hire Me
+          </a>
+
+          <button
+            className={`burger ${open ? "open" : ""}`}
+            aria-label="Toggle menu"
+            onClick={() => setOpen((v) => !v)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
       </div>
 
       <div className={`mobile-menu ${open ? "open" : ""}`}>
@@ -89,9 +104,18 @@ export default function Navbar() {
             {link.label}
           </a>
         ))}
-        <a href="#contact" className="hire-btn mobile" onClick={handleNav("#contact")}>
-          Hire Me
-        </a>
+        <div className="mobile-menu-footer">
+          <button
+            className="theme-toggle"
+            onClick={toggle}
+            aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+          >
+            {theme === "dark" ? <FiSun /> : <FiMoon />}
+          </button>
+          <a href="#contact" className="hire-btn mobile" onClick={handleNav("#contact")}>
+            Hire Me
+          </a>
+        </div>
       </div>
     </motion.nav>
   );

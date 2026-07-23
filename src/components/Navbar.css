@@ -10,12 +10,12 @@
   border-bottom: 1px solid transparent;
 }
 .navbar.scrolled {
-  background: rgba(5, 5, 5, 0.65);
+  background: var(--nav-bg);
   backdrop-filter: blur(22px);
   -webkit-backdrop-filter: blur(22px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--glass-border);
   padding-block: 1rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-soft);
 }
 
 .navbar-inner {
@@ -76,11 +76,37 @@
   width: 100%;
 }
 
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--glass-bg);
+  border: 1.5px solid var(--glass-border);
+  color: var(--white);
+  font-size: 1.05rem;
+  transition: border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+.theme-toggle:hover {
+  color: var(--crimson-soft);
+  border-color: var(--glass-border-hover);
+  box-shadow: var(--red-glow);
+}
+
 .hire-btn {
   padding: 0.7rem 1.7rem;
   border-radius: var(--radius-pill);
   background: linear-gradient(135deg, var(--crimson), var(--dark-red));
-  color: var(--white);
+  color: #fff;
   font-size: 0.88rem;
   font-weight: 600;
   box-shadow: 0 8px 24px rgba(229, 9, 20, 0.35);
@@ -144,12 +170,12 @@
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    background: rgba(5, 5, 5, 0.97);
+    background: var(--black);
     backdrop-filter: blur(20px);
     transform: translateY(-100%);
     opacity: 0;
     pointer-events: none;
-    transition: transform 0.5s var(--ease-premium), opacity 0.4s ease;
+    transition: transform 0.5s var(--ease-premium), opacity 0.4s ease, background 0.5s ease;
     z-index: 205;
   }
   .mobile-menu.open {
@@ -165,8 +191,13 @@
   .mobile-menu a.active {
     color: var(--crimson-soft);
   }
+  .mobile-menu-footer {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 1rem;
+  }
   .mobile-menu .hire-btn.mobile {
     display: inline-flex;
-    margin-top: 1rem;
   }
 }

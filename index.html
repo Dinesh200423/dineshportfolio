@@ -10,11 +10,23 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Dinesh Kumar — Software Developer & Content Creator" />
     <meta property="og:description" content="Software Developer & Content Creator building scalable CRM solutions, business websites, and high-converting digital experiences." />
-    <meta property="og:image" content="/images/dinesh-portrait-new.jpg" />
+    <meta property="og:image" content="/images/dk.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Dinesh Kumar — Software Developer & Content Creator" />
     <meta name="twitter:description" content="Software Developer & Content Creator building scalable CRM solutions, business websites, and high-converting digital experiences." />
-    <meta name="twitter:image" content="/images/dinesh-portrait-new.jpg" />
+    <meta name="twitter:image" content="/images/dk.png" />
+
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("dk-theme");
+          var theme = saved === "light" || saved === "dark" ? saved : "dark";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

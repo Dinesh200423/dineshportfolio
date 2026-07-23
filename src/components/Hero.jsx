@@ -66,9 +66,9 @@ export default function Hero() {
           </motion.h1>
 
           <motion.h2 className="hero-roles" {...fadeUp(0.16)}>
-            {profile.roles[0]} <span className="slash">/</span>
+            <span className="role-fill">{profile.roles[0]}</span> <span className="slash">/</span>
             <br />
-            {profile.roles[1]}
+            <span className="role-outline">{profile.roles[1]}</span>
           </motion.h2>
 
           <motion.p className="hero-desc" {...fadeUp(0.24)}>

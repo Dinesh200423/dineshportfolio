@@ -1,6 +1,6 @@
 .footer {
   background: var(--black-soft);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid var(--glass-border);
   padding: 3.5rem 0 1.75rem;
 }
 .footer-inner {
@@ -32,7 +32,8 @@
   width: 42px;
   height: 42px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--glass-bg);
+  border: 1.5px solid var(--glass-border);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,7 +48,7 @@
 .footer-bottom {
   text-align: center;
   padding-top: 1.75rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--glass-border);
   color: var(--gray-700);
   font-size: 0.82rem;
 }

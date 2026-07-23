@@ -66,6 +66,12 @@
 .project-card.reverse .project-image::after {
   background: linear-gradient(to left, transparent 60%, rgba(5, 5, 5, 0.35));
 }
+:root[data-theme="light"] .project-image::after {
+  background: linear-gradient(to right, transparent 60%, rgba(5, 5, 5, 0.16));
+}
+:root[data-theme="light"] .project-card.reverse .project-image::after {
+  background: linear-gradient(to left, transparent 60%, rgba(5, 5, 5, 0.16));
+}
 
 .project-content {
   position: relative;

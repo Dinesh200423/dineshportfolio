@@ -1,9 +1,10 @@
 /* ============================================================
    DINESH KUMAR — PORTFOLIO
-   Luxury Dark Theme — Black / Crimson
+   Dark: Luxury Black / Crimson    Light: Elegant White / Crimson
    ============================================================ */
 
 :root {
+  /* ---- surfaces (dark defaults) ---- */
   --black: #050505;
   --black-soft: #0a0a0a;
   --black-elevated: #0d0d0d;
@@ -23,6 +24,20 @@
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-border-hover: rgba(229, 9, 20, 0.45);
 
+  /* ---- boxed-card system (the bordered / offset-shadow container) ---- */
+  --card-bg: #0c0c0c;
+  --card-border: rgba(255, 255, 255, 0.14);
+  --card-border-hover: var(--crimson-soft);
+  --card-shadow: 6px 6px 0 rgba(0, 0, 0, 0.7);
+  --card-shadow-hover: 9px 9px 0 rgba(0, 0, 0, 0.7), 0 0 45px rgba(229, 9, 20, 0.18);
+
+  --input-bg: rgba(255, 255, 255, 0.03);
+  --input-border: rgba(255, 255, 255, 0.14);
+  --nav-bg: rgba(5, 5, 5, 0.65);
+  --tag-text: #ff8a90;
+  --shimmer-a: rgba(255, 255, 255, 0.04);
+  --shimmer-b: rgba(255, 255, 255, 0.11);
+
   --red-glow: 0 0 40px rgba(229, 9, 20, 0.25);
   --red-glow-strong: 0 0 70px rgba(229, 9, 20, 0.4);
   --shadow-soft: 0 20px 50px rgba(0, 0, 0, 0.55);
@@ -38,6 +53,46 @@
 
   --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
   --container-w: 1360px;
+
+  color-scheme: dark;
+}
+
+/* ---- elegant white + red light theme ---- */
+:root[data-theme="light"] {
+  --black: #faf7f4;
+  --black-soft: #f2ede8;
+  --black-elevated: #ffffff;
+
+  --white: #16130f;
+  --gray-100: #241f1a;
+  --gray-300: #4a4340;
+  --gray-500: #766f6a;
+  --gray-700: #a49c96;
+
+  --glass-bg: #ffffff;
+  --glass-bg-strong: #ffffff;
+  --glass-border: rgba(22, 19, 15, 0.14);
+  --glass-border-hover: var(--crimson);
+
+  --card-bg: #ffffff;
+  --card-border: rgba(20, 16, 13, 0.92);
+  --card-border-hover: var(--crimson);
+  --card-shadow: 6px 6px 0 rgba(20, 16, 13, 0.9);
+  --card-shadow-hover: 9px 9px 0 rgba(20, 16, 13, 0.9), 0 0 45px rgba(229, 9, 20, 0.15);
+
+  --input-bg: #fffefd;
+  --input-border: rgba(20, 16, 13, 0.22);
+  --nav-bg: rgba(250, 247, 244, 0.75);
+  --tag-text: var(--crimson);
+  --shimmer-a: rgba(20, 16, 13, 0.04);
+  --shimmer-b: rgba(20, 16, 13, 0.1);
+
+  --red-glow: 0 0 40px rgba(229, 9, 20, 0.16);
+  --red-glow-strong: 0 0 70px rgba(229, 9, 20, 0.28);
+  --shadow-soft: 0 16px 40px rgba(20, 16, 13, 0.12);
+  --shadow-deep: 0 26px 60px rgba(20, 16, 13, 0.18);
+
+  color-scheme: light;
 }
 
 * {
@@ -60,6 +115,7 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background 0.5s ease, color 0.5s ease;
 }
 
 img,
@@ -90,7 +146,7 @@ textarea {
 
 ::selection {
   background: var(--crimson);
-  color: var(--white);
+  color: #fff;
 }
 
 ::-webkit-scrollbar {
@@ -128,6 +184,9 @@ textarea {
   font-weight: 600;
   margin-bottom: 1.2rem;
 }
+:root[data-theme="light"] .section-tag {
+  color: var(--crimson);
+}
 .section-tag::before {
   content: "";
   width: 8px;
@@ -140,7 +199,7 @@ textarea {
 .section-title {
   font-family: var(--font-display);
   font-size: clamp(2.1rem, 4.4vw, 3.6rem);
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: -1.5px;
   line-height: 1.1;
   color: var(--white);
@@ -161,20 +220,29 @@ textarea {
   -webkit-text-fill-color: transparent;
 }
 
-/* ============ Glass surfaces ============ */
+/* Bold outline / stroke heading accent (Serhii Korzhov-style display type) */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--white);
+  text-stroke: 1.5px var(--white);
+}
+:root[data-theme="light"] .text-outline {
+  -webkit-text-stroke: 1.5px var(--gray-100);
+  text-stroke: 1.5px var(--gray-100);
+}
+
+/* ============ Boxed-card surfaces ============ */
 .glass {
-  background: var(--glass-bg);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid var(--glass-border);
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-soft);
-  transition: border-color 0.45s var(--ease-premium), box-shadow 0.45s var(--ease-premium),
-    transform 0.45s var(--ease-premium), background 0.45s var(--ease-premium);
+  box-shadow: var(--card-shadow);
+  transition: border-color 0.35s var(--ease-premium), box-shadow 0.35s var(--ease-premium),
+    transform 0.35s var(--ease-premium), background 0.35s var(--ease-premium);
 }
 .glass:hover {
-  border-color: var(--glass-border-hover);
-  box-shadow: var(--shadow-deep), var(--red-glow);
+  border-color: var(--card-border-hover);
+  box-shadow: var(--card-shadow-hover);
 }
 
 /* ============ Buttons ============ */
@@ -195,16 +263,16 @@ textarea {
 }
 .btn-primary {
   background: linear-gradient(135deg, var(--crimson) 0%, var(--dark-red) 100%);
-  color: var(--white);
+  color: #fff;
   box-shadow: 0 10px 30px rgba(229, 9, 20, 0.35);
 }
 .btn-primary:hover {
   box-shadow: 0 16px 45px rgba(229, 9, 20, 0.55);
 }
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--input-bg);
   color: var(--white);
-  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  border: 1.5px solid var(--input-border);
 }
 .btn-secondary:hover {
   border-color: var(--crimson-soft);
@@ -213,7 +281,7 @@ textarea {
 }
 .btn-outline {
   background: transparent;
-  color: var(--crimson-soft);
+  color: var(--crimson);
   border: 1.5px solid rgba(229, 9, 20, 0.4);
 }
 .btn-outline:hover {
@@ -225,8 +293,8 @@ textarea {
 .tag {
   padding: 6px 16px;
   background: rgba(229, 9, 20, 0.08);
-  color: #ff8a90;
-  border: 1px solid rgba(229, 9, 20, 0.25);
+  color: var(--tag-text);
+  border: 1px solid rgba(229, 9, 20, 0.3);
   border-radius: var(--radius-pill);
   font-size: 0.8rem;
   font-weight: 500;
@@ -239,6 +307,9 @@ textarea {
   filter: blur(90px);
   pointer-events: none;
   z-index: 0;
+}
+:root[data-theme="light"] .ambient-glow {
+  opacity: 0.55;
 }
 
 @media (max-width: 768px) {

@@ -15,7 +15,7 @@
   max-width: 780px;
   margin: 0 auto;
   padding-left: clamp(24px, 4vw, 40px);
-  border-left: 1.5px solid rgba(255, 255, 255, 0.1);
+  border-left: 1.5px solid var(--glass-border);
 }
 
 .timeline-item {

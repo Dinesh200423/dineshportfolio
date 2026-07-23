@@ -83,14 +83,15 @@
   gap: 0.9rem;
   padding: 1.35rem;
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  box-shadow: var(--card-shadow);
   transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 .info-card:not(.static):hover {
-  border-color: var(--glass-border-hover);
+  border-color: var(--card-border-hover);
   transform: translateY(-4px);
-  box-shadow: var(--red-glow);
+  box-shadow: var(--card-shadow-hover);
 }
 .info-icon {
   width: 40px;
@@ -134,8 +135,8 @@
 }
 .contact-form input,
 .contact-form textarea {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--input-bg);
+  border: 1.5px solid var(--input-border);
   border-radius: var(--radius-sm);
   padding: 0.85rem 1.1rem;
   color: var(--white);

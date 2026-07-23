@@ -20,8 +20,8 @@
   height: 260px;
   border-radius: var(--radius-sm);
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: #0a0a0a;
+  border: 2px solid var(--card-border);
+  background: var(--black-elevated);
   box-shadow: 0 0 30px rgba(229, 9, 20, 0.12);
 }
 .video-skeleton {
@@ -29,9 +29,9 @@
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.04) 25%,
-    rgba(255, 255, 255, 0.09) 50%,
-    rgba(255, 255, 255, 0.04) 75%
+    var(--shimmer-a) 25%,
+    var(--shimmer-b) 50%,
+    var(--shimmer-a) 75%
   );
   background-size: 200% 100%;
   animation: shimmer 1.8s infinite linear;

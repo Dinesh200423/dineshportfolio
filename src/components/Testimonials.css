@@ -101,7 +101,7 @@
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--glass-border);
   border: none;
   transition: background 0.3s, transform 0.3s;
 }
