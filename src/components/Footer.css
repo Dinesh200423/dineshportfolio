@@ -13,7 +13,8 @@
 }
 .footer-brand h3 {
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
   color: var(--white);
   margin-bottom: 0.4rem;
 }

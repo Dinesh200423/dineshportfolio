@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { FiSun, FiMoon } from "react-icons/fi";
 import { navLinks, profile } from "../data/content";
 import { useTheme } from "../hooks/useTheme";
+import { comicBounce } from "../motion/comicBounce";
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -77,9 +78,14 @@ export default function Navbar() {
             {theme === "dark" ? <FiSun /> : <FiMoon />}
           </motion.button>
 
-          <a href="#contact" className="hire-btn" onClick={handleNav("#contact")}>
+          <motion.a
+            href="#contact"
+            className="hire-btn"
+            onClick={handleNav("#contact")}
+            {...comicBounce}
+          >
             Hire Me
-          </a>
+          </motion.a>
 
           <button
             className={`burger ${open ? "open" : ""}`}
@@ -112,9 +118,14 @@ export default function Navbar() {
           >
             {theme === "dark" ? <FiSun /> : <FiMoon />}
           </button>
-          <a href="#contact" className="hire-btn mobile" onClick={handleNav("#contact")}>
+          <motion.a
+            href="#contact"
+            className="hire-btn mobile"
+            onClick={handleNav("#contact")}
+            {...comicBounce}
+          >
             Hire Me
-          </a>
+          </motion.a>
         </div>
       </div>
     </motion.nav>

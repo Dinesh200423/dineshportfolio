@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { FiZap, FiTarget, FiRefreshCw, FiUser, FiMail, FiMapPin, FiLayers, FiDownload } from "react-icons/fi";
 import Reveal from "./Reveal";
 import { aboutStory, profile } from "../data/content";
+import { comicBounce } from "../motion/comicBounce";
 import "./About.css";
 
 const icons = { zap: FiZap, info: FiTarget, arrows: FiRefreshCw };
@@ -90,9 +91,15 @@ export default function About() {
               <span className="info-label">Focus</span>
               <span className="info-value">Flutter Developer, Full Stack Web Developer</span>
             </div>
-            <a href={profile.resume} target="_blank" rel="noopener noreferrer" className="btn btn-primary resume-btn">
+            <motion.a
+              href={profile.resume}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary resume-btn"
+              {...comicBounce}
+            >
               Download CV <FiDownload />
-            </a>
+            </motion.a>
           </Reveal>
 
           <Reveal delay={0.1} className="about-stats glass">

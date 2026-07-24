@@ -4,6 +4,7 @@ import { FiMail, FiMapPin, FiSend } from "react-icons/fi";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import Reveal from "./Reveal";
 import { profile } from "../data/content";
+import { comicBounce } from "../motion/comicBounce";
 import "./Contact.css";
 
 export default function Contact() {
@@ -122,8 +123,7 @@ export default function Contact() {
               <motion.button
                 type="submit"
                 className="btn btn-primary"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
+                {...comicBounce}
               >
                 Send Message <FiSend />
               </motion.button>

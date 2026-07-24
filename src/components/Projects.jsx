@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 import Reveal from "./Reveal";
 import { projects } from "../data/content";
+import { comicBounce } from "../motion/comicBounce";
 import "./Projects.css";
 
 function handleSpotlight(e) {
@@ -49,8 +50,7 @@ export default function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-outline"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.97 }}
+                    {...comicBounce}
                   >
                     Live Demo <FiArrowUpRight />
                   </motion.a>

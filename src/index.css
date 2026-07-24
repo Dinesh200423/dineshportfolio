@@ -24,12 +24,18 @@
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-border-hover: rgba(229, 9, 20, 0.45);
 
+  /* comic-ink outline — light line on dark bg, like a sticker */
+  --comic-outline: #f5f0ea;
+  --comic-shadow: 5px 5px 0 var(--comic-outline);
+  --comic-shadow-hover: 7px 7px 0 var(--comic-outline);
+  --comic-shadow-active: 2px 2px 0 var(--comic-outline);
+
   /* ---- boxed-card system (the bordered / offset-shadow container) ---- */
   --card-bg: #0c0c0c;
-  --card-border: rgba(255, 255, 255, 0.14);
+  --card-border: var(--comic-outline);
   --card-border-hover: var(--crimson-soft);
-  --card-shadow: 6px 6px 0 rgba(0, 0, 0, 0.7);
-  --card-shadow-hover: 9px 9px 0 rgba(0, 0, 0, 0.7), 0 0 45px rgba(229, 9, 20, 0.18);
+  --card-shadow: 6px 6px 0 var(--comic-outline);
+  --card-shadow-hover: 9px 9px 0 var(--comic-outline), 0 0 45px rgba(229, 9, 20, 0.18);
 
   --input-bg: rgba(255, 255, 255, 0.03);
   --input-border: rgba(255, 255, 255, 0.14);
@@ -44,11 +50,12 @@
   --shadow-deep: 0 30px 80px rgba(0, 0, 0, 0.7);
 
   --radius-sm: 14px;
-  --radius-md: 22px;
+  --radius-md: 0px;
   --radius-lg: 32px;
   --radius-pill: 999px;
 
-  --font-display: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-display: "Bangers", "Segoe UI", cursive;
+  --font-comic: "Fredoka", "Segoe UI", sans-serif;
   --font-body: "DM Sans", "Segoe UI", sans-serif;
 
   --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
@@ -74,11 +81,17 @@
   --glass-border: rgba(22, 19, 15, 0.14);
   --glass-border-hover: var(--crimson);
 
+  /* classic black comic-ink outline on paper-white */
+  --comic-outline: #14100d;
+  --comic-shadow: 5px 5px 0 var(--comic-outline);
+  --comic-shadow-hover: 7px 7px 0 var(--comic-outline);
+  --comic-shadow-active: 2px 2px 0 var(--comic-outline);
+
   --card-bg: #ffffff;
-  --card-border: rgba(20, 16, 13, 0.92);
+  --card-border: var(--comic-outline);
   --card-border-hover: var(--crimson);
-  --card-shadow: 6px 6px 0 rgba(20, 16, 13, 0.9);
-  --card-shadow-hover: 9px 9px 0 rgba(20, 16, 13, 0.9), 0 0 45px rgba(229, 9, 20, 0.15);
+  --card-shadow: 6px 6px 0 var(--comic-outline);
+  --card-shadow-hover: 9px 9px 0 var(--comic-outline), 0 0 45px rgba(229, 9, 20, 0.15);
 
   --input-bg: #fffefd;
   --input-border: rgba(20, 16, 13, 0.22);
@@ -198,10 +211,10 @@ textarea {
 
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(2.1rem, 4.4vw, 3.6rem);
-  font-weight: 800;
-  letter-spacing: -1.5px;
-  line-height: 1.1;
+  font-size: clamp(2.3rem, 4.8vw, 4rem);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  line-height: 1.15;
   color: var(--white);
 }
 
@@ -245,48 +258,50 @@ textarea {
   box-shadow: var(--card-shadow-hover);
 }
 
-/* ============ Buttons ============ */
+/* ============ Buttons — comic-panel style ============ */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 1.05rem 2.35rem;
+  padding: 1rem 2.3rem;
   border-radius: var(--radius-pill);
+  font-family: var(--font-comic);
   font-weight: 600;
   font-size: 0.95rem;
-  border: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 3px solid var(--comic-outline);
+  box-shadow: var(--comic-shadow);
   cursor: pointer;
   white-space: nowrap;
-  transition: transform 0.35s var(--ease-premium), box-shadow 0.35s var(--ease-premium),
-    background 0.35s var(--ease-premium), border-color 0.35s var(--ease-premium), color 0.35s;
+  transition: box-shadow 0.18s var(--ease-premium), background 0.3s var(--ease-premium),
+    border-color 0.3s var(--ease-premium), color 0.3s;
+}
+.btn:hover {
+  box-shadow: var(--comic-shadow-hover);
+}
+.btn:active {
+  box-shadow: var(--comic-shadow-active);
 }
 .btn-primary {
   background: linear-gradient(135deg, var(--crimson) 0%, var(--dark-red) 100%);
   color: #fff;
-  box-shadow: 0 10px 30px rgba(229, 9, 20, 0.35);
-}
-.btn-primary:hover {
-  box-shadow: 0 16px 45px rgba(229, 9, 20, 0.55);
 }
 .btn-secondary {
   background: var(--input-bg);
   color: var(--white);
-  border: 1.5px solid var(--input-border);
 }
 .btn-secondary:hover {
-  border-color: var(--crimson-soft);
+  border-color: var(--comic-outline);
   background: rgba(229, 9, 20, 0.08);
-  box-shadow: var(--red-glow);
 }
 .btn-outline {
-  background: transparent;
+  background: var(--card-bg);
   color: var(--crimson);
-  border: 1.5px solid rgba(229, 9, 20, 0.4);
 }
 .btn-outline:hover {
   background: rgba(229, 9, 20, 0.1);
-  border-color: var(--crimson);
 }
 
 /* ============ Tags ============ */
@@ -294,10 +309,12 @@ textarea {
   padding: 6px 16px;
   background: rgba(229, 9, 20, 0.08);
   color: var(--tag-text);
-  border: 1px solid rgba(229, 9, 20, 0.3);
+  border: 1.5px solid rgba(229, 9, 20, 0.35);
   border-radius: var(--radius-pill);
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-family: var(--font-comic);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
 }
 
 /* ============ Ambient red glow backdrop (reused per-section) ============ */

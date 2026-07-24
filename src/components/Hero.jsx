@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { FaGithub, FaLinkedinIn, FaInstagram, FaEnvelope } from "react-icons/fa";
 import { profile } from "../data/content";
+import { comicBounce } from "../motion/comicBounce";
 import "./Hero.css";
 
 const ease = [0.16, 1, 0.3, 1];
@@ -80,8 +81,7 @@ export default function Hero() {
               href="#works"
               className="btn btn-primary"
               onClick={scrollToWorks}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
+              {...comicBounce}
             >
               View My Work
             </motion.a>
@@ -89,8 +89,7 @@ export default function Hero() {
               href="#contact"
               className="btn btn-secondary"
               onClick={scrollToContact}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
+              {...comicBounce}
             >
               Let's Connect
             </motion.a>
