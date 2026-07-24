@@ -52,27 +52,30 @@ export default function Skills() {
           </p>
         </Reveal>
 
-        <div className="skills-grid">
-          {skills.map((skill, i) => {
+      </div>
+
+      <Reveal delay={0.1} className="skills-scroller-outer">
+        <div className="skills-scroller">
+          {skills.map((skill) => {
             const Icon = iconMap[skill.icon];
             return (
-              <Reveal key={skill.name} delay={(i % 7) * 0.06}>
-                <motion.div
-                  className="skill-card glass"
-                  style={{ animationDelay: `${(i % 5) * 0.6}s` }}
-                  whileHover={{ y: -8, scale: 1.03 }}
-                >
-                  <div className="skill-icon">
-                    <Icon />
-                  </div>
-                  <h4>{skill.name}</h4>
-                  <p>{skill.desc}</p>
-                </motion.div>
-              </Reveal>
+              <motion.div
+                key={skill.name}
+                className="skill-card glass"
+                whileHover={{ y: -8, scale: 1.03 }}
+              >
+                <div className="skill-icon">
+                  <Icon />
+                </div>
+                <h4>{skill.name}</h4>
+                <p>{skill.desc}</p>
+              </motion.div>
             );
           })}
         </div>
-      </div>
+        <div className="skills-fade skills-fade-left" />
+        <div className="skills-fade skills-fade-right" />
+      </Reveal>
     </section>
   );
 }
