@@ -45,13 +45,12 @@
 }
 
 .about-feature-cards {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.1rem;
-  flex-wrap: wrap;
 }
 .feature-card {
-  flex: 1 1 160px;
-  padding: 1.6rem 1.3rem;
+  padding: 1.5rem 1.2rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -209,7 +208,7 @@
     margin-inline: auto;
   }
   .about-feature-cards {
-    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
   }
   .info-row {
     flex-direction: column;
@@ -224,6 +223,12 @@
   }
 }
 
+@media (max-width: 640px) {
+  .about-feature-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 520px) {
   .about-stats {
     grid-template-columns: 1fr;
@@ -234,5 +239,8 @@
   .stat:not(:last-child) {
     border-right: none;
     border-bottom: 2px solid var(--glass-border);
+  }
+  .about-feature-cards {
+    grid-template-columns: 1fr;
   }
 }
