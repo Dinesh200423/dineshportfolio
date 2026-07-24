@@ -33,7 +33,6 @@
   display: flex;
   gap: 1.4rem;
   overflow-x: auto;
-  scroll-snap-type: x proximity;
   padding: 0.5rem clamp(24px, 5vw, 80px) 1.75rem;
   scrollbar-width: thin;
   scrollbar-color: var(--crimson) transparent;
@@ -69,7 +68,6 @@
 
 .skill-card {
   flex: 0 0 220px;
-  scroll-snap-align: start;
   padding: 2rem 1.4rem;
   display: flex;
   flex-direction: column;

@@ -16,7 +16,11 @@ import { FaCss3Alt, FaAws } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
 import Reveal from "./Reveal";
 import { skills } from "../data/content";
+import { useAutoScroll } from "../hooks/useAutoScroll";
 import "./Skills.css";
+
+// Rendered twice back-to-back so the auto-scroll loop can wrap seamlessly.
+const loopedSkills = [...skills, ...skills];
 
 const iconMap = {
   flutter: SiFlutter,
@@ -36,6 +40,8 @@ const iconMap = {
 };
 
 export default function Skills() {
+  const scrollerRef = useAutoScroll({ speed: 0.6 });
+
   return (
     <section id="skills" className="section skills-section">
       <div className="ambient-glow skills-glow" />
@@ -55,12 +61,12 @@ export default function Skills() {
       </div>
 
       <Reveal delay={0.1} className="skills-scroller-outer">
-        <div className="skills-scroller">
-          {skills.map((skill) => {
+        <div className="skills-scroller" ref={scrollerRef}>
+          {loopedSkills.map((skill, i) => {
             const Icon = iconMap[skill.icon];
             return (
               <motion.div
-                key={skill.name}
+                key={`${skill.name}-${i}`}
                 className="skill-card glass"
                 whileHover={{ y: -8, scale: 1.03 }}
               >
