@@ -99,14 +99,16 @@
 .hero-roles .slash {
   color: var(--gray-500);
 }
+/* comic caption-box highlight — solid marker block behind the text */
 .hero-roles .role-outline {
-  color: transparent;
-  -webkit-text-stroke: 1.5px var(--crimson-soft);
-  text-stroke: 1.5px var(--crimson-soft);
-}
-:root[data-theme="light"] .hero-roles .role-outline {
-  -webkit-text-stroke: 1.5px var(--crimson);
-  text-stroke: 1.5px var(--crimson);
+  display: inline-block;
+  color: #fff;
+  background: linear-gradient(120deg, var(--crimson) 0%, var(--dark-red) 100%);
+  padding: 0.08em 0.35em 0.14em;
+  border: 3px solid var(--comic-outline);
+  box-shadow: 4px 4px 0 var(--comic-outline);
+  transform: rotate(-1.5deg);
+  border-radius: 6px;
 }
 
 .hero-desc {

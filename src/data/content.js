@@ -46,10 +46,10 @@ export const aboutStory = {
     { label: "Specialization", value: "Flutter Developer, Full Stack Web Developer" },
   ],
   stats: [
-    { number: "20+", label: "Projects Completed" },
-    { number: "10+", label: "Technologies Mastered" },
-    { number: "100%", label: "Client Satisfaction" },
-    { number: "2K+", label: "Hours of Coding" },
+    { number: "20+", label: "Projects Completed", icon: "folder" },
+    { number: "10+", label: "Technologies Mastered", icon: "cpu" },
+    { number: "100%", label: "Client Satisfaction", icon: "smile" },
+    { number: "2K+", label: "Hours of Coding", icon: "clock" },
   ],
 };
 

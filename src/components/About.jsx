@@ -1,11 +1,25 @@
 import { motion } from "framer-motion";
-import { FiZap, FiTarget, FiRefreshCw, FiUser, FiMail, FiMapPin, FiLayers, FiDownload } from "react-icons/fi";
+import {
+  FiZap,
+  FiTarget,
+  FiRefreshCw,
+  FiUser,
+  FiMail,
+  FiMapPin,
+  FiLayers,
+  FiDownload,
+  FiFolder,
+  FiCpu,
+  FiSmile,
+  FiClock,
+} from "react-icons/fi";
 import Reveal from "./Reveal";
 import { aboutStory, profile } from "../data/content";
 import { comicBounce } from "../motion/comicBounce";
 import "./About.css";
 
 const icons = { zap: FiZap, info: FiTarget, arrows: FiRefreshCw };
+const statIcons = { folder: FiFolder, cpu: FiCpu, smile: FiSmile, clock: FiClock };
 
 export default function About() {
   return (
@@ -103,12 +117,27 @@ export default function About() {
           </Reveal>
 
           <Reveal delay={0.1} className="about-stats glass">
-            {aboutStory.stats.map((s) => (
-              <div className="stat" key={s.label}>
-                <h3>{s.number}</h3>
-                <p>{s.label}</p>
-              </div>
-            ))}
+            <div className="stats-grid-overlay" />
+            {aboutStory.stats.map((s, i) => {
+              const Icon = statIcons[s.icon];
+              return (
+                <motion.div
+                  className="stat"
+                  key={s.label}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.08 }}
+                  whileHover={{ y: -4 }}
+                >
+                  <div className="stat-icon">
+                    <Icon />
+                  </div>
+                  <h3>{s.number}</h3>
+                  <p>{s.label}</p>
+                </motion.div>
+              );
+            })}
           </Reveal>
         </div>
       </div>
