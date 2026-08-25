@@ -83,6 +83,11 @@
   align-items: center;
   justify-content: center;
 }
+.about-photo-parallax {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+}
 .about-photo-glow {
   position: absolute;
   inset: -12%;

@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import {
   FiZap,
   FiTarget,
@@ -22,6 +23,13 @@ const icons = { zap: FiZap, info: FiTarget, arrows: FiRefreshCw };
 const statIcons = { folder: FiFolder, cpu: FiCpu, smile: FiSmile, clock: FiClock };
 
 export default function About() {
+  const photoWrapRef = useRef(null);
+  const { scrollYProgress: photoScroll } = useScroll({
+    target: photoWrapRef,
+    offset: ["start end", "end start"],
+  });
+  const photoParallaxY = useTransform(photoScroll, [0, 1], [70, -70]);
+
   return (
     <section id="about" className="section about-section">
       <div className="ambient-glow about-glow-1" />
@@ -68,18 +76,20 @@ export default function About() {
           </div>
 
           <Reveal delay={0.1} className="about-right">
-            <div className="about-photo-glow" />
-            <motion.div
-              className="about-photo-frame"
-              animate={{ y: [0, -14, 0] }}
-              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <img
-                src="/images/about-image.png"
-                alt={profile.name}
-                loading="lazy"
-                decoding="async"
-              />
+            <motion.div ref={photoWrapRef} className="about-photo-parallax" style={{ y: photoParallaxY }}>
+              <div className="about-photo-glow" />
+              <motion.div
+                className="about-photo-frame"
+                animate={{ y: [0, -14, 0] }}
+                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <img
+                  src="/images/about-image.png"
+                  alt={profile.name}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </motion.div>
             </motion.div>
           </Reveal>
         </div>
