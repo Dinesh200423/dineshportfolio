@@ -49,7 +49,7 @@
   display: grid;
   grid-template-columns: 1.3fr 0.7fr 0.85fr;
   gap: clamp(1.5rem, 3vw, 2.5rem);
-  align-items: start;
+  align-items: center;
   padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
   border-top: 1px solid var(--ap-line);
   padding-top: clamp(1.5rem, 3vw, 2.5rem);
@@ -94,7 +94,7 @@
 .ap-photo-frame {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   border-radius: 10px;
   overflow: hidden;
   border: 1.5px solid var(--ap-line);
