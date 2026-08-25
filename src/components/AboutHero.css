@@ -16,13 +16,13 @@
   position: relative;
   background: var(--ah-bg);
   color: var(--ah-fg);
-  height: 220vh;
+  height: 140vh;
   overflow-x: hidden;
 }
 
 @media (min-width: 900px) {
   .about-hero {
-    height: 230vh;
+    height: 145vh;
   }
 }
 

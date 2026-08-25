@@ -47,7 +47,7 @@ export default function AboutHero() {
               trigger: sectionRef.current,
               start: "top top",
               end: "bottom bottom",
-              scrub: 1,
+              scrub: 0.35,
               pin: pinRef.current,
               anticipatePin: 1,
             },
