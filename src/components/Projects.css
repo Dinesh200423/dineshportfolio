@@ -16,16 +16,21 @@
   overflow: hidden;
 }
 
+/* Sticks centered in the viewport for the whole scroll range of
+   .pj-cards, instead of sitting once in the middle of a tall block —
+   this is what makes it read as a constant background layer. */
 .pj-watermark {
-  position: absolute;
-  inset: 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  margin-bottom: calc(-1 * 100vh);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: "Anton", "Segoe UI", sans-serif;
   font-weight: 400;
   text-transform: uppercase;
-  font-size: clamp(7rem, 26vw, 22rem);
+  font-size: clamp(6rem, 22vw, 18rem);
   line-height: 1;
   letter-spacing: 0px;
   color: var(--gray-100);
@@ -47,18 +52,20 @@
   grid-template-columns: repeat(12, 1fr);
   gap: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 2.5vw, 2rem);
   padding-block: clamp(2rem, 6vw, 5rem);
+  max-width: 900px;
+  margin-inline: auto;
 }
 
 /* zigzag: each card ends toward the right, the next starts toward
    the left, so they read as a diagonal chain across the watermark */
 .pj-card-slot {
-  grid-column: span 7;
+  grid-column: span 5;
 }
 .pj-card-slot-end {
-  grid-column: 6 / 13;
+  grid-column: 8 / 13;
 }
 .pj-card-slot-start {
-  grid-column: 1 / 8;
+  grid-column: 1 / 6;
 }
 
 .pj-card {
@@ -121,12 +128,14 @@
 }
 
 @media (max-width: 900px) {
-  .pj-card-slot-end,
-  .pj-card-slot-start {
-    grid-column: 3 / 13;
+  .pj-cards {
+    max-width: 620px;
+  }
+  .pj-card-slot-end {
+    grid-column: 6 / 13;
   }
   .pj-card-slot-start {
-    grid-column: 1 / 11;
+    grid-column: 1 / 8;
   }
 }
 
