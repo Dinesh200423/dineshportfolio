@@ -66,6 +66,22 @@ export default function About() {
               })}
             </div>
           </div>
+
+          <Reveal delay={0.1} className="about-right">
+            <div className="about-photo-glow" />
+            <motion.div
+              className="about-photo-frame"
+              animate={{ y: [0, -14, 0] }}
+              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <img
+                src="/images/about-image.png"
+                alt={profile.name}
+                loading="lazy"
+                decoding="async"
+              />
+            </motion.div>
+          </Reveal>
         </div>
 
         <div className="about-bottom">
