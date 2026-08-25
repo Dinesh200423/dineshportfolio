@@ -9,6 +9,7 @@ import {
   FiMapPin,
   FiLayers,
   FiDownload,
+  FiArrowRight,
 } from "react-icons/fi";
 import Reveal from "./Reveal";
 import { aboutStory, profile } from "../data/content";
@@ -17,7 +18,12 @@ import "./About.css";
 
 const icons = { zap: FiZap, info: FiTarget, arrows: FiRefreshCw };
 
-const marqueeItems = ["Open to Opportunities", "Freelance", "Full-Time"];
+const infoRows = [
+  { icon: FiUser, value: profile.name, label: "Name" },
+  { icon: FiMail, value: profile.email, label: "Email" },
+  { icon: FiMapPin, value: "India", label: "Location" },
+  { icon: FiLayers, value: "Flutter Developer, Full Stack Web Developer", label: "Focus" },
+];
 
 export default function About() {
   const photoWrapRef = useRef(null);
@@ -33,7 +39,7 @@ export default function About() {
         <Reveal className="about-poster">
           {/* top bar */}
           <div className="ap-topbar">
-            <span className="ap-index">01 / Profile</span>
+            <span className="ap-index">01 / About Me</span>
             <span className="ap-rule" />
             <span className="ap-role">Full Stack Developer</span>
           </div>
@@ -41,12 +47,14 @@ export default function About() {
           {/* heading + copy + photo */}
           <div className="ap-main">
             <h2 className="ap-heading">
-              <span className="ap-line">{aboutStory.title[0]}</span>
-              <span className="ap-line">{aboutStory.title[1]}</span>
-              <span className="ap-line ap-accent">{aboutStory.title[2]}</span>
+              {aboutStory.title[0]} {aboutStory.title[1]}
+              <span className="ap-accent">{aboutStory.title[2]}</span>
             </h2>
 
             <div className="ap-copy">
+              <span className="ap-plus" aria-hidden="true">
+                +
+              </span>
               {aboutStory.paragraphs.map((p) => (
                 <p key={p}>{p}</p>
               ))}
@@ -55,6 +63,15 @@ export default function About() {
             <div className="ap-photo-col">
               <motion.div ref={photoWrapRef} className="ap-photo-parallax" style={{ y: photoParallaxY }}>
                 <div className="ap-photo-frame">
+                  <span className="ap-corner ap-corner-tl" />
+                  <span className="ap-corner ap-corner-tr" />
+                  <span className="ap-corner ap-corner-bl" />
+                  <span className="ap-corner ap-corner-br" />
+                  <div className="ap-photo-vbarcode" aria-hidden="true">
+                    {Array.from({ length: 22 }).map((_, i) => (
+                      <span key={i} style={{ height: i % 4 === 0 ? 10 : 5 }} />
+                    ))}
+                  </div>
                   <img
                     src="/images/about-image.png"
                     alt={profile.name}
@@ -78,56 +95,56 @@ export default function About() {
             </div>
           </div>
 
-          {/* footer: profile info + stats + CTA */}
+          {/* footer: profile info + stats */}
           <div className="ap-footer">
-            <div className="ap-info">
-              <div className="ap-info-row">
-                <FiUser />
-                <span>{profile.name}</span>
-              </div>
-              <div className="ap-info-row">
-                <FiMail />
-                <span>{profile.email}</span>
-              </div>
-              <div className="ap-info-row">
-                <FiMapPin />
-                <span>India</span>
-              </div>
-              <div className="ap-info-row">
-                <FiLayers />
-                <span>Flutter Developer, Full Stack Web Developer</span>
-              </div>
-              <motion.a
-                href={profile.resume}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ap-cv-btn"
-                {...comicBounce}
-              >
-                Download CV <FiDownload />
-              </motion.a>
+            <div className="ap-footer-label">
+              <span className="ap-index">02 / Profile</span>
+              <span className="ap-rule ap-rule-thin" />
             </div>
 
-            <div className="ap-stats">
-              {aboutStory.stats.map((s) => (
-                <div className="ap-stat" key={s.label}>
-                  <h3>{s.number}</h3>
-                  <p>{s.label}</p>
-                </div>
-              ))}
+            <div className="ap-footer-grid">
+              <div className="ap-info">
+                {infoRows.map(({ icon: Icon, value, label }) => (
+                  <div className="ap-info-row" key={label}>
+                    <Icon />
+                    <div>
+                      <span className="ap-info-value">{value}</span>
+                      <span className="ap-info-label">{label}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="ap-stats">
+                {aboutStory.stats.map((s) => (
+                  <div className="ap-stat" key={s.label}>
+                    <h3>{s.number}</h3>
+                    <p>{s.label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* marquee ticker */}
-          <div className="ap-marquee">
-            <div className="ap-marquee-track">
-              {[...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems].map(
-                (item, i) => (
-                  <span key={i}>
-                    {item} <i />
-                  </span>
-                )
-              )}
+          {/* bottom bar: CV + availability strip */}
+          <div className="ap-bottombar">
+            <motion.a
+              href={profile.resume}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ap-cv-btn"
+              {...comicBounce}
+            >
+              Download CV <FiDownload />
+            </motion.a>
+            <div className="ap-hatch" aria-hidden="true" />
+            <div className="ap-availability">
+              <span>Open to Opportunities</span>
+              <span className="ap-dot" />
+              <span>Freelance</span>
+              <span className="ap-dot" />
+              <span>Full-Time</span>
+              <FiArrowRight className="ap-availability-arrow" />
             </div>
           </div>
         </Reveal>

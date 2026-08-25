@@ -5,7 +5,7 @@
 /* ============================================================
    ABOUT POSTER — bold solid-red editorial panel.
    Deliberately forced regardless of the site's light/dark toggle,
-   a signature moment like the reference poster style.
+   a signature moment like a designed portfolio poster.
    ============================================================ */
 .about-poster {
   --ap-bg: #c81d24;
@@ -17,8 +17,9 @@
   position: relative;
   background: radial-gradient(circle at 85% 0%, var(--ap-bg) 0%, var(--ap-bg-deep) 100%);
   color: var(--ap-fg);
-  border-radius: 28px;
-  padding: clamp(1.5rem, 3vw, 2.75rem) clamp(1.5rem, 4vw, 3.25rem) 0;
+  border-radius: 20px;
+  border: 1px solid var(--ap-line);
+  padding: clamp(1.5rem, 3vw, 2.75rem) clamp(1.5rem, 4vw, 3.25rem);
   overflow: hidden;
   box-shadow: var(--shadow-deep);
 }
@@ -35,19 +36,32 @@
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+.ap-index {
+  flex-shrink: 0;
+}
 .ap-rule {
   flex: 1;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--ap-fg);
+  opacity: 0.92;
+}
+.ap-rule-thin {
   height: 1px;
+  border-radius: 0;
   background: var(--ap-line);
+  opacity: 1;
 }
 .ap-role {
+  flex-shrink: 0;
   opacity: 0.85;
 }
 
 /* ---- main: heading + copy + photo ---- */
 .ap-main {
+  position: relative;
   display: grid;
-  grid-template-columns: 1.3fr 0.7fr 0.85fr;
+  grid-template-columns: 1.35fr 0.65fr 0.85fr;
   gap: clamp(1.5rem, 3vw, 2.5rem);
   align-items: center;
   padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
@@ -56,24 +70,34 @@
 }
 
 .ap-heading {
-  display: flex;
-  flex-direction: column;
   font-family: "Anton", "Segoe UI", sans-serif;
   font-weight: 400;
   text-transform: uppercase;
-  font-size: clamp(2.1rem, 4.4vw, 3.6rem);
-  line-height: 0.98;
+  font-size: clamp(2.4rem, 5vw, 4.1rem);
+  line-height: 0.96;
   letter-spacing: 0.5px;
 }
 .ap-accent {
+  display: block;
   color: var(--ap-dark);
 }
 
 .ap-copy {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 1.1rem;
   padding-top: 0.5rem;
+  padding-left: 1.5rem;
+  border-left: 1px solid var(--ap-line);
+  height: 100%;
+}
+.ap-plus {
+  position: absolute;
+  top: -1.75rem;
+  left: 1.5rem;
+  font-size: 0.9rem;
+  opacity: 0.6;
 }
 .ap-copy p {
   margin: 0;
@@ -95,22 +119,78 @@
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
-  border-radius: 10px;
+  border-radius: 4px;
   overflow: hidden;
-  border: 1.5px solid var(--ap-line);
+  background: var(--ap-dark);
+  border: 1px solid var(--ap-line);
+  padding: 10px;
 }
 .ap-photo-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: 60% 25%;
+  border-radius: 2px;
 }
+.ap-corner {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-color: var(--ap-fg);
+  opacity: 0.85;
+  z-index: 2;
+  pointer-events: none;
+}
+.ap-corner-tl {
+  top: 6px;
+  left: 6px;
+  border-top: 1.5px solid;
+  border-left: 1.5px solid;
+}
+.ap-corner-tr {
+  top: 6px;
+  right: 6px;
+  border-top: 1.5px solid;
+  border-right: 1.5px solid;
+}
+.ap-corner-bl {
+  bottom: 6px;
+  left: 6px;
+  border-bottom: 1.5px solid;
+  border-left: 1.5px solid;
+}
+.ap-corner-br {
+  bottom: 6px;
+  right: 6px;
+  border-bottom: 1.5px solid;
+  border-right: 1.5px solid;
+}
+.ap-photo-vbarcode {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  right: 10px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 3px;
+  pointer-events: none;
+}
+.ap-photo-vbarcode span {
+  display: block;
+  width: 2px;
+  background: var(--ap-fg);
+  opacity: 0.55;
+}
+
 .ap-caption-bar {
   display: flex;
   align-items: center;
   gap: 0.6rem;
   padding: 0.85rem 1rem;
-  border-radius: 10px;
+  border-radius: 6px;
   background: rgba(245, 239, 228, 0.1);
   border: 1px solid var(--ap-line);
   font-family: var(--font-comic);
@@ -142,48 +222,69 @@
 
 /* ---- footer: info + stats ---- */
 .ap-footer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(1.5rem, 3vw, 2.5rem);
   padding: clamp(1.5rem, 3vw, 2.25rem) 0;
   border-top: 1px solid var(--ap-line);
 }
+.ap-footer-label {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-comic);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.ap-footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
 .ap-info {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 1.25rem 2rem;
+  gap: 1.5rem 2.25rem;
 }
 .ap-info-row {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.85rem;
-  opacity: 0.9;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.9rem;
 }
 .ap-info-row svg {
   flex-shrink: 0;
   opacity: 0.75;
+  margin-top: 3px;
 }
-.ap-cv-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0.7rem 1.4rem;
-  border-radius: 999px;
-  background: var(--ap-dark);
+.ap-info-row div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.ap-info-value {
   color: var(--ap-fg);
-  font-family: var(--font-comic);
-  font-weight: 600;
-  font-size: 0.85rem;
+  font-weight: 500;
+}
+.ap-info-label {
+  font-size: 0.68rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  opacity: 0.6;
 }
 
 .ap-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+}
+.ap-stat {
+  padding-left: 1.25rem;
+  border-left: 1px solid var(--ap-line);
+}
+.ap-stat:first-child {
+  padding-left: 0;
+  border-left: none;
 }
 .ap-stat h3 {
   font-family: "Anton", "Segoe UI", sans-serif;
@@ -198,50 +299,69 @@
   opacity: 0.75;
 }
 
-/* ---- marquee ticker ---- */
-.ap-marquee {
-  margin: 0 -3.25rem;
-  overflow: hidden;
-  background: var(--ap-dark);
-  padding: 0.85rem 0;
-}
-.ap-marquee-track {
+/* ---- bottom bar: CV + availability ---- */
+.ap-bottombar {
   display: flex;
-  width: max-content;
-  gap: 2.5rem;
-  animation: apMarquee 22s linear infinite;
+  align-items: stretch;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  margin: 0 calc(-1 * clamp(1.5rem, 4vw, 3.25rem)) calc(-1 * clamp(1.5rem, 3vw, 2.75rem));
+  padding: clamp(1rem, 2vw, 1.25rem) clamp(1.5rem, 4vw, 3.25rem);
+  border-top: 1px solid var(--ap-line);
+  background: rgba(22, 10, 9, 0.35);
+}
+.ap-cv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.65rem 1.3rem;
+  border-radius: 999px;
+  background: var(--ap-dark);
+  color: var(--ap-fg);
   font-family: var(--font-comic);
-  font-size: 0.85rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.ap-hatch {
+  flex: 0 0 60px;
+  border-radius: 999px;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--ap-fg) 0px,
+    var(--ap-fg) 2px,
+    transparent 2px,
+    transparent 8px
+  );
+  opacity: 0.7;
+}
+.ap-availability {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  padding: 0 1.5rem;
+  border-radius: 999px;
+  background: var(--ap-fg);
+  color: var(--ap-bg-deep);
+  font-family: var(--font-comic);
+  font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
   white-space: nowrap;
+  overflow: hidden;
 }
-.ap-marquee-track span {
-  display: inline-flex;
-  align-items: center;
-  gap: 2.5rem;
-  color: var(--ap-fg);
+.ap-availability .ap-dot {
+  background: var(--ap-bg-deep);
+  opacity: 0.5;
 }
-.ap-marquee-track i {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--ap-bg);
-  font-style: normal;
-}
-@keyframes apMarquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .ap-marquee-track {
-    animation: none;
-  }
+.ap-availability-arrow {
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 /* ============================================================
@@ -288,15 +408,31 @@
   .ap-main {
     grid-template-columns: 1fr;
   }
+  .ap-copy {
+    border-left: none;
+    padding-left: 0;
+  }
+  .ap-plus {
+    display: none;
+  }
   .ap-photo-col {
     max-width: 360px;
     margin: 0 auto;
   }
-  .ap-footer {
+  .ap-footer-grid {
     grid-template-columns: 1fr;
   }
   .ap-stats {
     grid-template-columns: repeat(2, 1fr);
+    row-gap: 1.25rem;
+  }
+  .ap-stat:nth-child(2) {
+    padding-left: 1.25rem;
+    border-left: 1px solid var(--ap-line);
+  }
+  .ap-stat:nth-child(3) {
+    padding-left: 0;
+    border-left: none;
   }
   .about-feature-cards {
     grid-template-columns: repeat(3, 1fr);
@@ -314,6 +450,12 @@
     order: 3;
     flex-basis: 100%;
   }
+  .ap-bottombar {
+    flex-wrap: wrap;
+  }
+  .ap-hatch {
+    display: none;
+  }
 }
 
 @media (max-width: 520px) {
@@ -321,9 +463,16 @@
     grid-template-columns: 1fr;
   }
   .ap-stats {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
-  .ap-marquee {
-    margin: 0 -1.5rem;
+  .ap-stat {
+    padding-left: 0 !important;
+    border-left: none !important;
+    padding-top: 1rem;
+    border-top: 1px solid var(--ap-line);
+  }
+  .ap-stat:first-child {
+    padding-top: 0;
+    border-top: none;
   }
 }
