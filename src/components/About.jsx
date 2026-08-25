@@ -66,21 +66,6 @@ export default function About() {
               })}
             </div>
           </div>
-
-          <Reveal delay={0.1} className="about-right">
-            <motion.div
-              className="workspace-frame"
-              animate={{ y: [0, -14, 0] }}
-              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <img
-                src="/images/3d-workspace.png"
-                alt="Developer workspace illustration"
-                loading="lazy"
-                decoding="async"
-              />
-            </motion.div>
-          </Reveal>
         </div>
 
         <div className="about-bottom">

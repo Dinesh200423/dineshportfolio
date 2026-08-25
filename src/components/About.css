@@ -20,10 +20,6 @@
 .about-grid {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: clamp(2rem, 5vw, 4rem);
-  align-items: center;
   margin-bottom: clamp(3rem, 6vw, 5rem);
 }
 
@@ -75,18 +71,6 @@
   color: var(--gray-300);
   font-size: 0.85rem;
   line-height: 1.5;
-}
-
-.about-right {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.workspace-frame {
-  width: 100%;
-  max-width: 640px;
-  border-radius: 28px;
-  overflow: hidden;
 }
 
 .about-bottom {
