@@ -9,10 +9,6 @@ import {
   FiMapPin,
   FiLayers,
   FiDownload,
-  FiFolder,
-  FiCpu,
-  FiSmile,
-  FiClock,
 } from "react-icons/fi";
 import Reveal from "./Reveal";
 import { aboutStory, profile } from "../data/content";
@@ -20,7 +16,8 @@ import { comicBounce } from "../motion/comicBounce";
 import "./About.css";
 
 const icons = { zap: FiZap, info: FiTarget, arrows: FiRefreshCw };
-const statIcons = { folder: FiFolder, cpu: FiCpu, smile: FiSmile, clock: FiClock };
+
+const marqueeItems = ["Open to Opportunities", "Freelance", "Full-Time"];
 
 export default function About() {
   const photoWrapRef = useRef(null);
@@ -28,128 +25,128 @@ export default function About() {
     target: photoWrapRef,
     offset: ["start end", "end start"],
   });
-  const photoParallaxY = useTransform(photoScroll, [0, 1], [70, -70]);
+  const photoParallaxY = useTransform(photoScroll, [0, 1], [40, -40]);
 
   return (
     <section id="about" className="section about-section">
-      <div className="ambient-glow about-glow-1" />
-      <div className="ambient-glow about-glow-2" />
-
       <div className="container">
-        <div className="about-grid">
-          <div className="about-left">
-            <Reveal>
-              <span className="section-tag">About Me</span>
-            </Reveal>
-            <Reveal delay={0.05}>
-              <h2 className="section-title about-title">
-                {aboutStory.title[0]}
-                <br />
-                {aboutStory.title[1]}
-                <br />
-                <span className="text-gradient">{aboutStory.title[2]}</span>
-              </h2>
-            </Reveal>
+        <Reveal className="about-poster">
+          {/* top bar */}
+          <div className="ap-topbar">
+            <span className="ap-index">01 / Profile</span>
+            <span className="ap-rule" />
+            <span className="ap-role">Full Stack Developer</span>
+          </div>
 
-            <Reveal delay={0.12} className="about-paragraphs">
+          {/* heading + copy + photo */}
+          <div className="ap-main">
+            <h2 className="ap-heading">
+              <span className="ap-line">{aboutStory.title[0]}</span>
+              <span className="ap-line">{aboutStory.title[1]}</span>
+              <span className="ap-line ap-accent">{aboutStory.title[2]}</span>
+            </h2>
+
+            <div className="ap-copy">
               {aboutStory.paragraphs.map((p) => (
                 <p key={p}>{p}</p>
               ))}
-            </Reveal>
+            </div>
 
-            <div className="about-feature-cards">
-              {aboutStory.features.map((f, i) => {
-                const Icon = icons[f.icon];
-                return (
-                  <Reveal key={f.title} delay={0.15 + i * 0.08}>
-                    <motion.div className="feature-card glass" whileHover={{ y: -6 }}>
-                      <div className="feature-icon">
-                        <Icon />
-                      </div>
-                      <h4>{f.title}</h4>
-                      <p>{f.desc}</p>
-                    </motion.div>
-                  </Reveal>
-                );
-              })}
+            <div className="ap-photo-col">
+              <motion.div ref={photoWrapRef} className="ap-photo-parallax" style={{ y: photoParallaxY }}>
+                <div className="ap-photo-frame">
+                  <img
+                    src="/images/about-image.png"
+                    alt={profile.name}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </motion.div>
+              <div className="ap-caption-bar">
+                <span>Code</span>
+                <span className="ap-dot" />
+                <span>Create</span>
+                <span className="ap-dot" />
+                <span>Solve</span>
+                <div className="ap-barcode" aria-hidden="true">
+                  {Array.from({ length: 14 }).map((_, i) => (
+                    <span key={i} style={{ width: i % 3 === 0 ? 3 : 1.5 }} />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 
-          <Reveal delay={0.1} className="about-right">
-            <motion.div ref={photoWrapRef} className="about-photo-parallax" style={{ y: photoParallaxY }}>
-              <div className="about-photo-glow" />
-              <motion.div
-                className="about-photo-frame"
-                animate={{ y: [0, -14, 0] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+          {/* footer: profile info + stats + CTA */}
+          <div className="ap-footer">
+            <div className="ap-info">
+              <div className="ap-info-row">
+                <FiUser />
+                <span>{profile.name}</span>
+              </div>
+              <div className="ap-info-row">
+                <FiMail />
+                <span>{profile.email}</span>
+              </div>
+              <div className="ap-info-row">
+                <FiMapPin />
+                <span>India</span>
+              </div>
+              <div className="ap-info-row">
+                <FiLayers />
+                <span>Flutter Developer, Full Stack Web Developer</span>
+              </div>
+              <motion.a
+                href={profile.resume}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ap-cv-btn"
+                {...comicBounce}
               >
-                <img
-                  src="/images/about-image.png"
-                  alt={profile.name}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </motion.div>
-            </motion.div>
-          </Reveal>
-        </div>
+                Download CV <FiDownload />
+              </motion.a>
+            </div>
 
-        <div className="about-bottom">
-          <Reveal className="about-info glass">
-            <div className="info-row">
-              <FiUser />
-              <span className="info-label">Name</span>
-              <span className="info-value">{profile.name}</span>
-            </div>
-            <div className="info-row">
-              <FiMail />
-              <span className="info-label">Email</span>
-              <span className="info-value">{profile.email}</span>
-            </div>
-            <div className="info-row">
-              <FiMapPin />
-              <span className="info-label">Location</span>
-              <span className="info-value">India</span>
-            </div>
-            <div className="info-row">
-              <FiLayers />
-              <span className="info-label">Focus</span>
-              <span className="info-value">Flutter Developer, Full Stack Web Developer</span>
-            </div>
-            <motion.a
-              href={profile.resume}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-primary resume-btn"
-              {...comicBounce}
-            >
-              Download CV <FiDownload />
-            </motion.a>
-          </Reveal>
-
-          <Reveal delay={0.1} className="about-stats glass">
-            <div className="stats-grid-overlay" />
-            {aboutStory.stats.map((s, i) => {
-              const Icon = statIcons[s.icon];
-              return (
-                <motion.div
-                  className="stat"
-                  key={s.label}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.08 }}
-                  whileHover={{ y: -4 }}
-                >
-                  <div className="stat-icon">
-                    <Icon />
-                  </div>
+            <div className="ap-stats">
+              {aboutStory.stats.map((s) => (
+                <div className="ap-stat" key={s.label}>
                   <h3>{s.number}</h3>
                   <p>{s.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* marquee ticker */}
+          <div className="ap-marquee">
+            <div className="ap-marquee-track">
+              {[...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems].map(
+                (item, i) => (
+                  <span key={i}>
+                    {item} <i />
+                  </span>
+                )
+              )}
+            </div>
+          </div>
+        </Reveal>
+
+        <div className="about-feature-cards">
+          {aboutStory.features.map((f, i) => {
+            const Icon = icons[f.icon];
+            return (
+              <Reveal key={f.title} delay={0.1 + i * 0.08}>
+                <motion.div className="feature-card glass" whileHover={{ y: -6 }}>
+                  <div className="feature-icon">
+                    <Icon />
+                  </div>
+                  <h4>{f.title}</h4>
+                  <p>{f.desc}</p>
                 </motion.div>
-              );
-            })}
-          </Reveal>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>
