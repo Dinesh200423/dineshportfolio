@@ -149,12 +149,21 @@ export default function About() {
           </div>
         </Reveal>
 
+        <div className="about-transition" aria-hidden="true" />
+
         <div className="about-feature-cards">
           {aboutStory.features.map((f, i) => {
             const Icon = icons[f.icon];
             return (
-              <Reveal key={f.title} delay={0.1 + i * 0.08}>
-                <motion.div className="feature-card glass" whileHover={{ y: -6 }}>
+              <Reveal key={f.title} delay={0.1 + i * 0.08} y={56}>
+                <motion.div
+                  className="feature-card glass"
+                  initial={{ scale: 0.94 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                  whileHover={{ y: -6 }}
+                >
                   <div className="feature-icon">
                     <Icon />
                   </div>

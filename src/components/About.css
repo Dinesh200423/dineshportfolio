@@ -364,6 +364,14 @@
   flex-shrink: 0;
 }
 
+/* ---- soft bridge between the red poster and the black section bg ---- */
+.about-transition {
+  height: clamp(60px, 10vw, 110px);
+  margin-top: -1px;
+  background: linear-gradient(to bottom, rgba(200, 29, 36, 0.16), transparent);
+  pointer-events: none;
+}
+
 /* ============================================================
    Feature cards row (below the poster)
    ============================================================ */
