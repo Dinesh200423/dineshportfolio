@@ -25,31 +25,40 @@
   font-family: "Anton", "Segoe UI", sans-serif;
   font-weight: 400;
   text-transform: uppercase;
-  font-size: clamp(6rem, 20vw, 16rem);
+  font-size: clamp(7rem, 26vw, 22rem);
   line-height: 1;
-  letter-spacing: 2px;
-  color: var(--gray-700);
-  opacity: 0.22;
+  letter-spacing: 0px;
+  color: var(--gray-100);
+  opacity: 0.9;
   white-space: nowrap;
   pointer-events: none;
   user-select: none;
   z-index: 0;
 }
 :root[data-theme="light"] .pj-watermark {
-  opacity: 0.12;
+  color: var(--gray-700);
+  opacity: 0.55;
 }
 
 .pj-cards {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: clamp(1.5rem, 3vw, 2.5rem);
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 2.5vw, 2rem);
   padding-block: clamp(2rem, 6vw, 5rem);
 }
 
-.pj-card-slot-1 {
-  margin-top: clamp(2.5rem, 6vw, 4.5rem);
+/* zigzag: each card ends toward the right, the next starts toward
+   the left, so they read as a diagonal chain across the watermark */
+.pj-card-slot {
+  grid-column: span 7;
+}
+.pj-card-slot-end {
+  grid-column: 6 / 13;
+}
+.pj-card-slot-start {
+  grid-column: 1 / 8;
 }
 
 .pj-card {
@@ -111,15 +120,26 @@
   line-height: 1.55;
 }
 
+@media (max-width: 900px) {
+  .pj-card-slot-end,
+  .pj-card-slot-start {
+    grid-column: 3 / 13;
+  }
+  .pj-card-slot-start {
+    grid-column: 1 / 11;
+  }
+}
+
 @media (max-width: 760px) {
   .pj-watermark {
-    font-size: clamp(4rem, 22vw, 8rem);
+    font-size: clamp(4.5rem, 24vw, 9rem);
   }
   .pj-cards {
     grid-template-columns: 1fr;
     gap: 1.75rem;
   }
-  .pj-card-slot-1 {
-    margin-top: 0;
+  .pj-card-slot-end,
+  .pj-card-slot-start {
+    grid-column: auto;
   }
 }

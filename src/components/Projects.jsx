@@ -20,7 +20,11 @@ function ProjectCard({ project, index }) {
   const imgY = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
 
   return (
-    <Reveal delay={index * 0.08} y={64} className={`pj-card-slot pj-card-slot-${index % 2}`}>
+    <Reveal
+      delay={index * 0.08}
+      y={64}
+      className={`pj-card-slot ${index % 2 === 0 ? "pj-card-slot-end" : "pj-card-slot-start"}`}
+    >
       <motion.a
         ref={cardRef}
         href={project.link}
