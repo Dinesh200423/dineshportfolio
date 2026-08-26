@@ -76,22 +76,20 @@ export const projects = [
     link: "https://sr-photography-site.vercel.app/",
   },
   {
-    name: "AWS Feedback Form",
+    name: "24K Luxury Salon",
     description:
-      "Serverless feedback collection system built using AWS Lambda, API Gateway, DynamoDB, and SES.",
-    image:
-      "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=900&h=600&fit=crop",
-    tech: ["AWS", "Lambda", "API Gateway", "DynamoDB"],
-    link: "#",
+      "A premium unisex salon website for 24K Luxury Salon in Anna Nagar, showcasing services, online booking, and an elegant brand experience.",
+    image: "/images/24k-luxury-thumbnail.png",
+    tech: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+    link: "https://24kluxurysalons.com/",
   },
   {
-    name: "AWS Image Upload App",
+    name: "Rayies — RAY Infra Energy Solutions",
     description:
-      "Cloud-based image upload and preview application using Amazon S3, Lambda, and API Gateway.",
-    image:
-      "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=900&h=600&fit=crop",
-    tech: ["AWS S3", "Lambda", "API Gateway"],
-    link: "#",
+      "A business website for RAY Infra Energy Solutions promoting rooftop solar installations for homes, businesses, and RWAs with PM Surya Ghar subsidy support.",
+    image: "/images/rayies-thumbnail.png",
+    tech: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+    link: "https://rayies.in/",
   },
 ];
 
