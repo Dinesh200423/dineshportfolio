@@ -1,9 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
-  FiZap,
-  FiTarget,
-  FiRefreshCw,
   FiUser,
   FiMail,
   FiMapPin,
@@ -15,8 +12,6 @@ import Reveal from "./Reveal";
 import { aboutStory, profile } from "../data/content";
 import { comicBounce } from "../motion/comicBounce";
 import "./About.css";
-
-const icons = { zap: FiZap, info: FiTarget, arrows: FiRefreshCw };
 
 const infoRows = [
   { icon: FiUser, value: profile.name, label: "Name" },
@@ -122,6 +117,10 @@ export default function About() {
                     <p>{s.label}</p>
                   </div>
                 ))}
+                <div className="ap-stat ap-stat-quality">
+                  <h3>{aboutStory.features[0].title}</h3>
+                  <p>{aboutStory.features[0].desc}</p>
+                </div>
               </div>
             </div>
           </div>
@@ -150,30 +149,6 @@ export default function About() {
         </Reveal>
 
         <div className="about-transition" aria-hidden="true" />
-
-        <div className="about-feature-cards">
-          {aboutStory.features.map((f, i) => {
-            const Icon = icons[f.icon];
-            return (
-              <Reveal key={f.title} delay={0.1 + i * 0.08} y={56}>
-                <motion.div
-                  className="feature-card glass"
-                  initial={{ scale: 0.94 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                  whileHover={{ y: -6 }}
-                >
-                  <div className="feature-icon">
-                    <Icon />
-                  </div>
-                  <h4>{f.title}</h4>
-                  <p>{f.desc}</p>
-                </motion.div>
-              </Reveal>
-            );
-          })}
-        </div>
       </div>
     </section>
   );

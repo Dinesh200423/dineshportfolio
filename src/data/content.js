@@ -8,7 +8,7 @@ export const profile = {
   taglineRoles: "Flutter Developer | Web Developer | AWS Enthusiast",
   heroDescription:
     "I build scalable CRM solutions for businesses, helping automate operations while supporting brands with digital marketing, content creation, and high-converting web experiences.",
-  email: "dkadmin23@gmail.com",
+  email: "dinesh085596@gmail.com",
   location: "Chennai, India",
   github: "https://github.com/Dinesh200423/",
   linkedin: "https://www.linkedin.com/in/dinesh-kumar-developer23/",
@@ -24,16 +24,6 @@ export const aboutStory = {
   ],
   features: [
     {
-      title: "Performance",
-      desc: "I build fast, optimized and scalable apps.",
-      icon: "zap",
-    },
-    {
-      title: "Problem Solver",
-      desc: "I love solving complex real-world problems.",
-      icon: "info",
-    },
-    {
       title: "Always Learning",
       desc: "I explore new tools and technologies.",
       icon: "arrows",
@@ -41,15 +31,13 @@ export const aboutStory = {
   ],
   info: [
     { label: "Name", value: "Dinesh Kumar" },
-    { label: "Email", value: "dkadmin23@gmail.com" },
+    { label: "Email", value: "dinesh085596@gmail.com" },
     { label: "Location", value: "India" },
     { label: "Specialization", value: "Flutter Developer, Full Stack Web Developer" },
   ],
   stats: [
-    { number: "20+", label: "Projects Completed", icon: "folder" },
-    { number: "10+", label: "Technologies Mastered", icon: "cpu" },
+    { number: "10+", label: "Projects Completed", icon: "folder" },
     { number: "100%", label: "Client Satisfaction", icon: "smile" },
-    { number: "2K+", label: "Hours of Coding", icon: "clock" },
   ],
 };
 
