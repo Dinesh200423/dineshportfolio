@@ -1,35 +1,76 @@
 .contact-section {
   position: relative;
-  overflow: hidden;
-}
-.contact-glow-1 {
-  top: -10%;
-  left: 20%;
-  width: 600px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(229, 9, 20, 0.18) 0%, transparent 70%);
-}
-.contact-glow-2 {
-  bottom: -10%;
-  right: 10%;
-  width: 500px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(139, 0, 0, 0.18) 0%, transparent 70%);
 }
 
+/* ============================================================
+   CONTACT POSTER — same bold solid-red editorial language as
+   About and Projects. Forced regardless of the site's theme.
+   ============================================================ */
+
 .contact-panel {
+  --co-bg: #c81d24;
+  --co-bg-deep: #9c1319;
+  --co-fg: #f5efe4;
+  --co-dark: #160a09;
+  --co-line: rgba(245, 239, 228, 0.35);
+
   position: relative;
   z-index: 1;
-  padding: clamp(2.5rem, 5vw, 4.5rem);
+  background: radial-gradient(circle at 85% 100%, var(--co-bg) 0%, var(--co-bg-deep) 100%);
+  color: var(--co-fg);
+  border-radius: 20px;
+  border: 1px solid var(--co-line);
+  padding: clamp(1.5rem, 3vw, 2.75rem) clamp(1.5rem, 4vw, 3.25rem);
+  overflow: hidden;
+  box-shadow: var(--shadow-deep);
+}
+
+/* ---- top bar ---- */
+.contact-topbar {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding-bottom: 1.5rem;
+  font-family: var(--font-comic);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.contact-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--co-line);
 }
 
 .contact-header {
   text-align: center;
   max-width: 640px;
-  margin: 0 auto 3rem;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 3vw, 2.5rem) 0;
+  border-top: 1px solid var(--co-line);
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.contact-heading {
+  font-family: "Anton", "Segoe UI", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: clamp(2rem, 4.2vw, 3.2rem);
+  line-height: 1.05;
+}
+.contact-accent {
+  display: block;
+  color: var(--co-dark);
+}
+
+.contact-sub {
+  margin-top: 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  opacity: 0.88;
 }
 
 .availability-badge {
@@ -39,11 +80,14 @@
   margin-top: 1.5rem;
   padding: 8px 18px;
   border-radius: var(--radius-pill);
-  background: rgba(16, 185, 129, 0.1);
-  border: 1px solid rgba(16, 185, 129, 0.25);
-  color: #34d399;
-  font-size: 0.88rem;
-  font-weight: 500;
+  background: var(--co-dark);
+  border: 1px solid var(--co-line);
+  color: #6ee7b7;
+  font-family: var(--font-comic);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 .status-dot {
   width: 9px;
@@ -69,6 +113,8 @@
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
   gap: clamp(1.5rem, 4vw, 3rem);
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
+  border-top: 1px solid var(--co-line);
 }
 
 .contact-info {
@@ -79,7 +125,6 @@
 }
 .contact-info .info-card:last-child {
   grid-column: span 2;
-  flex-direction: row;
   justify-content: center;
 }
 .info-card {
@@ -87,35 +132,35 @@
   align-items: center;
   gap: 0.9rem;
   padding: 1.35rem;
-  border-radius: var(--radius-sm);
-  background: var(--card-bg);
-  border: 2px solid var(--card-border);
-  box-shadow: var(--card-shadow);
-  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  background: var(--co-dark);
+  border: 1px solid var(--co-line);
+  transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease;
 }
 .info-card:not(.static):hover {
-  border-color: var(--card-border-hover);
+  border-color: var(--co-fg);
   transform: translateY(-4px);
-  box-shadow: var(--card-shadow-hover);
+  background: #1f0d0c;
 }
 .info-icon {
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: rgba(229, 9, 20, 0.12);
-  color: var(--crimson-soft);
+  background: rgba(245, 239, 228, 0.1);
+  color: var(--co-fg);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
 .info-card h4 {
-  color: var(--white);
+  color: var(--co-fg);
   font-size: 0.92rem;
   font-weight: 600;
 }
 .info-card p {
-  color: var(--gray-500);
+  color: var(--co-fg);
+  opacity: 0.7;
   font-size: 0.8rem;
   word-break: break-word;
 }
@@ -135,29 +180,48 @@
   flex-direction: column;
   gap: 0.5rem;
   font-size: 0.82rem;
-  color: var(--gray-300);
+  color: var(--co-fg);
+  opacity: 0.85;
   font-weight: 500;
 }
 .contact-form input,
 .contact-form textarea {
-  background: var(--input-bg);
-  border: 1.5px solid var(--input-border);
-  border-radius: var(--radius-sm);
+  background: var(--co-dark);
+  border: 1px solid var(--co-line);
+  border-radius: 10px;
   padding: 0.85rem 1.1rem;
-  color: var(--white);
+  color: var(--co-fg);
   font-size: 0.95rem;
   resize: vertical;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--co-fg);
+  opacity: 0.4;
+}
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: var(--crimson);
-  box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.15);
+  border-color: var(--co-fg);
+  box-shadow: 0 0 0 3px rgba(245, 239, 228, 0.12);
 }
-.contact-form .btn {
+.contact-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   align-self: flex-start;
   margin-top: 0.4rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--co-dark);
+  color: var(--co-fg);
+  font-family: var(--font-comic);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 @media (max-width: 860px) {
@@ -165,9 +229,21 @@
     grid-template-columns: 1fr;
   }
 }
+@media (max-width: 640px) {
+  .contact-topbar {
+    flex-wrap: wrap;
+  }
+  .contact-rule {
+    order: 3;
+    flex-basis: 100%;
+  }
+}
 @media (max-width: 480px) {
   .contact-info {
     grid-template-columns: 1fr;
+  }
+  .contact-info .info-card:last-child {
+    grid-column: auto;
   }
   .form-row {
     grid-template-columns: 1fr;

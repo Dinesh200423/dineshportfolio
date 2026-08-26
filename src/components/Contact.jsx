@@ -22,19 +22,19 @@ export default function Contact() {
 
   return (
     <section id="contact" className="section contact-section">
-      <div className="ambient-glow contact-glow-1" />
-      <div className="ambient-glow contact-glow-2" />
-
       <div className="container">
-        <Reveal className="contact-panel glass">
+        <Reveal className="contact-panel">
+          <div className="contact-topbar">
+            <span className="contact-index">04 / Contact</span>
+            <span className="contact-rule" />
+          </div>
+
           <div className="contact-header">
-            <span className="section-tag">Contact</span>
-            <h2 className="section-title">
+            <h2 className="contact-heading">
               Let's Build Something
-              <br />
-              <span className="text-gradient">Great Together</span>
+              <span className="contact-accent">Great Together</span>
             </h2>
-            <p className="section-sub center">
+            <p className="contact-sub">
               Have a project in mind — a Flutter app, a website, a CRM, or a cloud solution?
               Let's create something exceptional together.
             </p>
@@ -135,7 +135,7 @@ export default function Contact() {
               </label>
               <motion.button
                 type="submit"
-                className="btn btn-primary"
+                className="contact-submit"
                 {...comicBounce}
               >
                 Send Message <FiSend />
