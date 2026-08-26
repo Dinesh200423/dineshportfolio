@@ -9,6 +9,8 @@ export const profile = {
   heroDescription:
     "I build scalable CRM solutions for businesses, helping automate operations while supporting brands with digital marketing, content creation, and high-converting web experiences.",
   email: "dinesh085596@gmail.com",
+  phone: "8939127720",
+  whatsapp: "https://wa.me/918939127720",
   location: "Chennai, India",
   github: "https://github.com/Dinesh200423/",
   linkedin: "https://www.linkedin.com/in/dinesh-kumar-developer23/",

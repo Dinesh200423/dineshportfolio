@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FiMail, FiMapPin, FiSend } from "react-icons/fi";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import Reveal from "./Reveal";
 import { profile } from "../data/content";
 import { comicBounce } from "../motion/comicBounce";
@@ -14,11 +14,10 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Project inquiry from ${form.name || "your website"}`);
-    const body = encodeURIComponent(
-      `${form.message}\n\n— ${form.name} (${form.email})`
+    const text = encodeURIComponent(
+      `Hi Dinesh, I'm ${form.name} (${form.email}).\n\n${form.message}`
     );
-    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
+    window.open(`${profile.whatsapp}?text=${text}`, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -71,6 +70,20 @@ export default function Contact() {
                 <div>
                   <h4>GitHub</h4>
                   <p>Explore my projects</p>
+                </div>
+              </a>
+              <a
+                href={`${profile.whatsapp}?text=${encodeURIComponent("Hi Dinesh, I'd like to discuss a project.")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="info-card"
+              >
+                <div className="info-icon">
+                  <FaWhatsapp />
+                </div>
+                <div>
+                  <h4>WhatsApp</h4>
+                  <p>{profile.phone}</p>
                 </div>
               </a>
               <div className="info-card static">
