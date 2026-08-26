@@ -219,21 +219,6 @@
   opacity: 0.8;
   max-width: 46ch;
 }
-.pj-gcard-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.25rem;
-}
-.pj-gcard-tag {
-  padding: 4px 12px;
-  border-radius: 999px;
-  border: 1px solid var(--pj-line);
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
 .pj-gcard-arrow {
   position: absolute;
   top: 1.25rem;

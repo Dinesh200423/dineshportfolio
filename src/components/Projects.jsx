@@ -25,13 +25,6 @@ function ProjectCard({ project, index }) {
           <h3>{project.name}</h3>
         </div>
         <p>{shortDesc(project.description)}</p>
-        <div className="pj-gcard-tags">
-          {project.tech.slice(0, 3).map((t) => (
-            <span className="pj-gcard-tag" key={t}>
-              {t}
-            </span>
-          ))}
-        </div>
         <span className="pj-gcard-arrow">
           <FiArrowUpRight />
         </span>
