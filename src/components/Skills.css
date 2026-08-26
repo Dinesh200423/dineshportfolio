@@ -1,6 +1,7 @@
 .skills-section {
   position: relative;
   overflow: hidden;
+  padding-top: clamp(2.5rem, 5vw, 4rem);
 }
 .skills-glow {
   top: 10%;

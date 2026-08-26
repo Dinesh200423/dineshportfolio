@@ -1,5 +1,6 @@
 .about-section {
   position: relative;
+  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 /* ============================================================
@@ -382,7 +383,7 @@
 
 /* ---- soft bridge between the red poster and the black section bg ---- */
 .about-transition {
-  height: clamp(60px, 10vw, 110px);
+  height: clamp(28px, 4vw, 48px);
   margin-top: -1px;
   background: linear-gradient(to bottom, rgba(200, 29, 36, 0.16), transparent);
   pointer-events: none;
