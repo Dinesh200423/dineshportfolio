@@ -1,336 +1,78 @@
-/* ============================================================
-   DINESH KUMAR — PORTFOLIO
-   Dark: Luxury Black / Crimson    Light: Elegant White / Crimson
-   ============================================================ */
+@import "tailwindcss";
 
-:root {
-  /* ---- surfaces (dark defaults) ---- */
-  --black: #050505;
-  --black-soft: #0a0a0a;
-  --black-elevated: #0d0d0d;
+@theme {
+  --color-cream: #f7f4ef;
+  --color-ink: #191816;
+  /* #ED321F is the brand red, used for large type and decoration. It sits just under
+     WCAG AA for small text, so these close variants carry small text and filled areas. */
+  --color-accent: #ed321f;
+  --color-accent-ink: #c4220f; /* small text on cream / paper */
+  --color-accent-fill: #d92a17; /* backgrounds carrying white text */
+  --color-accent-glow: #ff5a45; /* small text on charcoal */
+  --color-paper: #fffdfa;
+  --color-sand: #eae5dc;
+  --color-line: #d8d1c7;
+  --color-muted: #6d6962;
+  --color-body: #504d48;
+  --color-ash: #b9b1a7;
+  --color-rule: #4a4540;
 
-  --dark-red: #8b0000;
-  --crimson: #e50914;
-  --crimson-soft: #ff2b3d;
-
-  --white: #ffffff;
-  --gray-100: #e5e5e5;
-  --gray-300: #b3b3b3;
-  --gray-500: #8a8a8a;
-  --gray-700: #555555;
-
-  --glass-bg: rgba(255, 255, 255, 0.035);
-  --glass-bg-strong: rgba(255, 255, 255, 0.06);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-border-hover: rgba(229, 9, 20, 0.45);
-
-  /* comic-ink outline — light line on dark bg, like a sticker */
-  --comic-outline: #f5f0ea;
-  --comic-shadow: 5px 5px 0 var(--comic-outline);
-  --comic-shadow-hover: 7px 7px 0 var(--comic-outline);
-  --comic-shadow-active: 2px 2px 0 var(--comic-outline);
-
-  /* ---- boxed-card system (the bordered / offset-shadow container) ---- */
-  --card-bg: #0c0c0c;
-  --card-border: var(--comic-outline);
-  --card-border-hover: var(--crimson-soft);
-  --card-shadow: 6px 6px 0 var(--comic-outline);
-  --card-shadow-hover: 9px 9px 0 var(--comic-outline), 0 0 45px rgba(229, 9, 20, 0.18);
-
-  --input-bg: rgba(255, 255, 255, 0.03);
-  --input-border: rgba(255, 255, 255, 0.14);
-  --nav-bg: rgba(5, 5, 5, 0.65);
-  --tag-text: #ff8a90;
-  --shimmer-a: rgba(255, 255, 255, 0.04);
-  --shimmer-b: rgba(255, 255, 255, 0.11);
-
-  --red-glow: 0 0 40px rgba(229, 9, 20, 0.25);
-  --red-glow-strong: 0 0 70px rgba(229, 9, 20, 0.4);
-  --shadow-soft: 0 20px 50px rgba(0, 0, 0, 0.55);
-  --shadow-deep: 0 30px 80px rgba(0, 0, 0, 0.7);
-
-  --radius-sm: 14px;
-  --radius-md: 0px;
-  --radius-lg: 32px;
-  --radius-pill: 999px;
-
-  --font-display: "Bangers", "Segoe UI", cursive;
-  --font-comic: "Fredoka", "Segoe UI", sans-serif;
-  --font-body: "DM Sans", "Segoe UI", sans-serif;
-
-  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
-  --container-w: 1360px;
-
-  color-scheme: dark;
+  --font-display: "Oswald", "Arial Narrow", sans-serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, monospace;
 }
 
-/* ---- elegant white + red light theme ---- */
-:root[data-theme="light"] {
-  --black: #faf7f4;
-  --black-soft: #f2ede8;
-  --black-elevated: #ffffff;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
 
-  --white: #16130f;
-  --gray-100: #241f1a;
-  --gray-300: #4a4340;
-  --gray-500: #766f6a;
-  --gray-700: #a49c96;
+  body {
+    @apply bg-cream font-sans text-ink antialiased;
+  }
 
-  --glass-bg: #ffffff;
-  --glass-bg-strong: #ffffff;
-  --glass-border: rgba(22, 19, 15, 0.14);
-  --glass-border-hover: var(--crimson);
+  ::selection {
+    @apply bg-accent text-white;
+  }
 
-  /* classic black comic-ink outline on paper-white */
-  --comic-outline: #14100d;
-  --comic-shadow: 5px 5px 0 var(--comic-outline);
-  --comic-shadow-hover: 7px 7px 0 var(--comic-outline);
-  --comic-shadow-active: 2px 2px 0 var(--comic-outline);
+  :focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 4px;
+  }
 
-  --card-bg: #ffffff;
-  --card-border: var(--comic-outline);
-  --card-border-hover: var(--crimson);
-  --card-shadow: 6px 6px 0 var(--comic-outline);
-  --card-shadow-hover: 9px 9px 0 var(--comic-outline), 0 0 45px rgba(229, 9, 20, 0.15);
-
-  --input-bg: #fffefd;
-  --input-border: rgba(20, 16, 13, 0.22);
-  --nav-bg: rgba(250, 247, 244, 0.75);
-  --tag-text: var(--crimson);
-  --shimmer-a: rgba(20, 16, 13, 0.04);
-  --shimmer-b: rgba(20, 16, 13, 0.1);
-
-  --red-glow: 0 0 40px rgba(229, 9, 20, 0.16);
-  --red-glow-strong: 0 0 70px rgba(229, 9, 20, 0.28);
-  --shadow-soft: 0 16px 40px rgba(20, 16, 13, 0.12);
-  --shadow-deep: 0 26px 60px rgba(20, 16, 13, 0.18);
-
-  color-scheme: light;
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+    }
+  }
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@layer components {
+  .wrap {
+    @apply mx-auto w-full max-w-[1200px] px-4 sm:px-7;
+  }
 
-html {
-  scroll-behavior: smooth;
-  background: var(--black);
-}
+  .eyebrow {
+    @apply font-mono text-[11px] tracking-[0.12em] text-accent-ink uppercase;
+  }
+  .eyebrow::before {
+    content: "— ";
+  }
 
-body {
-  background: var(--black);
-  color: var(--white);
-  font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.7;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transition: background 0.5s ease, color 0.5s ease;
-}
-
-img,
-video {
-  display: block;
-  max-width: 100%;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul,
-ol {
-  list-style: none;
-}
-
-button {
-  font-family: inherit;
-  cursor: pointer;
-}
-
-input,
-textarea {
-  font-family: inherit;
-}
-
-::selection {
-  background: var(--crimson);
-  color: #fff;
-}
-
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--black);
-}
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(var(--crimson), var(--dark-red));
-  border-radius: 3px;
-}
-
-/* ============ Layout Utilities ============ */
-.container {
-  width: 100%;
-  max-width: var(--container-w);
-  margin: 0 auto;
-  padding-inline: clamp(24px, 5vw, 80px);
-}
-
-.section {
-  position: relative;
-  padding: clamp(5rem, 10vw, 9rem) 0;
-}
-
-.section-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.78rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--crimson-soft);
-  font-weight: 600;
-  margin-bottom: 1.2rem;
-}
-:root[data-theme="light"] .section-tag {
-  color: var(--crimson);
-}
-.section-tag::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--crimson);
-  box-shadow: 0 0 12px var(--crimson);
-}
-
-.section-title {
-  font-family: var(--font-display);
-  font-size: clamp(2.3rem, 4.8vw, 4rem);
-  font-weight: 400;
-  letter-spacing: 0.5px;
-  line-height: 1.15;
-  color: var(--white);
-}
-
-.section-sub {
-  color: var(--gray-300);
-  font-size: clamp(1rem, 1.3vw, 1.15rem);
-  line-height: 1.75;
-  max-width: 640px;
-  margin-top: 1.25rem;
-}
-
-.text-gradient {
-  background: linear-gradient(135deg, var(--crimson-soft) 0%, var(--dark-red) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Bold outline / stroke heading accent (Serhii Korzhov-style display type) */
-.text-outline {
-  color: transparent;
-  -webkit-text-stroke: 1.5px var(--white);
-  text-stroke: 1.5px var(--white);
-}
-:root[data-theme="light"] .text-outline {
-  -webkit-text-stroke: 1.5px var(--gray-100);
-  text-stroke: 1.5px var(--gray-100);
-}
-
-/* ============ Boxed-card surfaces ============ */
-.glass {
-  background: var(--card-bg);
-  border: 2px solid var(--card-border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--card-shadow);
-  transition: border-color 0.35s var(--ease-premium), box-shadow 0.35s var(--ease-premium),
-    transform 0.35s var(--ease-premium), background 0.35s var(--ease-premium);
-}
-.glass:hover {
-  border-color: var(--card-border-hover);
-  box-shadow: var(--card-shadow-hover);
-}
-
-/* ============ Buttons — comic-panel style ============ */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 1rem 2.3rem;
-  border-radius: var(--radius-pill);
-  font-family: var(--font-comic);
-  font-weight: 600;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border: 3px solid var(--comic-outline);
-  box-shadow: var(--comic-shadow);
-  cursor: pointer;
-  white-space: nowrap;
-  transition: box-shadow 0.18s var(--ease-premium), background 0.3s var(--ease-premium),
-    border-color 0.3s var(--ease-premium), color 0.3s;
-}
-.btn:hover {
-  box-shadow: var(--comic-shadow-hover);
-}
-.btn:active {
-  box-shadow: var(--comic-shadow-active);
-}
-.btn-primary {
-  background: linear-gradient(135deg, var(--crimson) 0%, var(--dark-red) 100%);
-  color: #fff;
-}
-.btn-secondary {
-  background: var(--input-bg);
-  color: var(--white);
-}
-.btn-secondary:hover {
-  border-color: var(--comic-outline);
-  background: rgba(229, 9, 20, 0.08);
-}
-.btn-outline {
-  background: var(--card-bg);
-  color: var(--crimson);
-}
-.btn-outline:hover {
-  background: rgba(229, 9, 20, 0.1);
-}
-
-/* ============ Tags ============ */
-.tag {
-  padding: 6px 16px;
-  background: rgba(229, 9, 20, 0.08);
-  color: var(--tag-text);
-  border: 1.5px solid rgba(229, 9, 20, 0.35);
-  border-radius: var(--radius-pill);
-  font-family: var(--font-comic);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-}
-
-/* ============ Ambient red glow backdrop (reused per-section) ============ */
-.ambient-glow {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(90px);
-  pointer-events: none;
-  z-index: 0;
-}
-:root[data-theme="light"] .ambient-glow {
-  opacity: 0.55;
-}
-
-@media (max-width: 768px) {
-  .section {
-    padding: 4rem 0;
+  .btn {
+    @apply inline-flex min-h-12 items-center gap-2 border px-5 text-[11px] font-extrabold tracking-[0.08em] uppercase transition-[transform,background-color,color,border-color] duration-200 hover:-translate-y-0.5;
+  }
+  .btn svg {
+    @apply transition-transform duration-200;
+  }
+  .btn:hover svg {
+    transform: translate(2px, -2px);
   }
 }
