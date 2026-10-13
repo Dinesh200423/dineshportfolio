@@ -53,7 +53,7 @@ function TechIcon({ name }: { name: string }) {
 
 export default function TechStack() {
   return (
-    <section id="skills" aria-labelledby="skills-title" className="py-16 md:py-24">
+    <section id="skills" aria-labelledby="skills-title" className="bg-sand py-16 md:py-24">
       <div className="wrap">
         <SectionHead
           id="skills-title"

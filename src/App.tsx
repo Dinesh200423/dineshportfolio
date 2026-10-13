@@ -23,10 +23,10 @@ export default function App() {
       <main id="main">
         <Hero />
         <Highlights />
-        <Projects />
         <About />
-        <Services />
         <TechStack />
+        <Projects />
+        <Services />
         <Contact />
       </main>
       <Footer />

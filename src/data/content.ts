@@ -2,11 +2,6 @@
 // between sections — edit details in this one place.
 
 import portrait from "../assets/dinesh-portrait.webp";
-import seaMiracle from "../assets/project-sea-miracle.webp";
-import srPhotography from "../assets/project-sr-photography.webp";
-import luxurySalon from "../assets/project-24k-luxury.webp";
-import rayies from "../assets/project-rayies.webp";
-import mfhCrm from "../assets/project-mfh-crm.webp";
 
 export const profile = {
   name: "Dinesh Kumar",
@@ -50,12 +45,10 @@ export interface Project {
   name: string;
   category: string;
   description: string;
-  image: string;
-  imageAlt: string;
   /** Live URL. Without one, the card points visitors to the contact section instead. */
   link?: string;
-  /** Spans the full grid width as the lead card. */
-  featured?: boolean;
+  /** Art direction for the card's poster panel — see Projects.tsx. */
+  poster: "crm" | "peach" | "gold" | "sun" | "navy";
 }
 
 export const projects: Project[] = [
@@ -64,17 +57,14 @@ export const projects: Project[] = [
     category: "CRM · Business automation",
     description:
       "A CRM that brings leads, WhatsApp enquiries, follow-ups, bookings, quotations, invoices, and reports into one dashboard — with a mobile view for replying to customers on the go.",
-    image: mfhCrm,
-    imageAlt: "MFH_CRM dashboard on a laptop showing leads, lead sources and follow-ups, beside a phone with a WhatsApp conversation",
-    featured: true,
+    poster: "crm",
   },
   {
     name: "Sea Miracle",
     category: "E-commerce · Beauty",
     description:
       "An e-commerce website for a beauty and cosmetics brand, letting customers browse, search, and buy skincare products online.",
-    image: seaMiracle,
-    imageAlt: "Screenshot of the Sea Miracle website",
+    poster: "peach",
     link: "https://seamiracle.in/",
   },
   {
@@ -82,17 +72,15 @@ export const projects: Project[] = [
     category: "Brand website · Booking",
     description:
       "A premium unisex salon website for 24K Luxury Salon in Anna Nagar, showcasing services, online booking, and an elegant brand experience.",
-    image: luxurySalon,
-    imageAlt: "Screenshot of the 24K Luxury Salon website",
+    poster: "gold",
     link: "https://24kluxurysalons.com/",
   },
   {
-    name: "Rayies — RAY Infra Energy",
-    category: "Business website · Solar",
+    name: "Rayies",
+    category: "Solar · Business website",
     description:
-      "A business website promoting rooftop solar installations for homes, businesses, and RWAs, with PM Surya Ghar subsidy support.",
-    image: rayies,
-    imageAlt: "Screenshot of the Rayies (RAY Infra Energy Solutions) website",
+      "A business website for RAY Infra Energy Solutions, promoting rooftop solar for homes, businesses, and RWAs with PM Surya Ghar subsidy support.",
+    poster: "sun",
     link: "https://rayies.in/",
   },
   {
@@ -100,8 +88,7 @@ export const projects: Project[] = [
     category: "Portfolio website · Photography",
     description:
       "A premium website for a photography brand, presenting wedding photography, event coverage, and portfolio services.",
-    image: srPhotography,
-    imageAlt: "Screenshot of the SR Photography website",
+    poster: "navy",
     link: "https://sr-photography-site.vercel.app/",
   },
 ];
