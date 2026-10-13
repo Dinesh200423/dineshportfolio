@@ -127,10 +127,63 @@ export const services = [
   },
 ];
 
-export const techStack = [
-  { group: "Frontend", items: ["HTML", "CSS", "JavaScript", "React", "TypeScript"] },
-  { group: "App development", items: ["Flutter", "Dart"] },
-  { group: "Backend & database", items: ["Supabase", "Firebase", "PostgreSQL", "MongoDB"] },
-  { group: "Cloud & deployment", items: ["AWS", "Vercel", "GitHub"] },
-  { group: "Digital tools", items: ["WordPress", "SEO", "Content creation"] },
+export interface TechItem {
+  name: string;
+  desc: string;
+}
+
+export interface TechGroup {
+  group: string;
+  desc: string;
+  items: TechItem[];
+}
+
+export const techStack: TechGroup[] = [
+  {
+    group: "Frontend",
+    desc: "Building responsive and modern user interfaces.",
+    items: [
+      { name: "HTML", desc: "Markup" },
+      { name: "CSS", desc: "Styling" },
+      { name: "JavaScript", desc: "Interactivity" },
+      { name: "React", desc: "Library" },
+      { name: "TypeScript", desc: "Type safety" },
+    ],
+  },
+  {
+    group: "App development",
+    desc: "Cross-platform mobile application development.",
+    items: [
+      { name: "Flutter", desc: "Mobile framework" },
+      { name: "Dart", desc: "Programming language" },
+    ],
+  },
+  {
+    group: "Backend & database",
+    desc: "Reliable backend services and data management.",
+    items: [
+      { name: "Supabase", desc: "Backend platform" },
+      { name: "Firebase", desc: "Backend services" },
+      { name: "PostgreSQL", desc: "Relational database" },
+      { name: "MongoDB", desc: "NoSQL database" },
+    ],
+  },
+  {
+    group: "Cloud & deployment",
+    desc: "Scalable infrastructure and seamless deployment.",
+    items: [
+      { name: "AWS", desc: "Cloud platform" },
+      { name: "Vercel", desc: "Hosting platform" },
+      { name: "GitHub", desc: "Version control" },
+    ],
+  },
+  {
+    group: "Digital & creative",
+    desc: "Tools for content, SEO and brand growth.",
+    items: [
+      { name: "WordPress", desc: "CMS platform" },
+      { name: "SEO", desc: "Search optimization" },
+      { name: "Content creation", desc: "Writing & design" },
+    ],
+  },
 ];
