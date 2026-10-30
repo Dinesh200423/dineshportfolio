@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://dineshportfolio-theta.vercel.app/sitemap.xml
